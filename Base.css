@@ -239,7 +239,7 @@
 }
 
 .theme-dark .content__908e2 {
-	color: var(--highlight);
+	color: rgb(255 255 255 / 80%);
 }
 
 .theme-dark .wrapper__2ea32:hover .unread__2ea32 {
@@ -520,6 +520,7 @@ div[class*="shop_"] {
 		border-color: rgba(255, 255, 255, 0.5) !important;
 
 	}
+
 
 
 
