@@ -498,22 +498,22 @@ div[class*="shop_"] {
 }
 
 		/* --- 4.3 Мини-профили и Попапы --- */
-	div[style*="--profile-gradient"],
-	.outer_c0bea0 {
-	    --profile-gradient-primary-color: transparent !important;
-	    --profile-gradient-secondary-color: transparent !important;
-	    --profile-gradient-overlay-color: transparent !important;
-	    --profile-gradient-button-color: transparent !important;
-	    --profile-gradient-modal-background-color: transparent !important;
-	    --custom-theme-base-color-amount: 0% !important;
-	    --custom-theme-text-color-amount: 0% !important;
-	    --custom-theme-base-color-light-hsl: 0 0% 0% !important;
-	    --custom-theme-base-color-light: transparent !important;
-	    --custom-theme-text-color-light: transparent !important;
-	    --custom-theme-base-color-dark-hsl: 0 0% 0% !important;
-	    --custom-theme-base-color-dark: transparent !important;
-	    --custom-theme-text-color-dark: transparent !important;
-	}
+div[style*="--profile-gradient"],
+.outer_c0bea0 {
+	--profile-gradient-primary-color: transparent !important;
+	--profile-gradient-secondary-color: transparent !important;
+	--profile-gradient-overlay-color: transparent !important;
+	--profile-gradient-button-color: transparent !important;
+	--profile-gradient-modal-background-color: transparent !important;
+	--custom-theme-base-color-amount: 0% !important;
+	--custom-theme-text-color-amount: 0% !important;
+	--custom-theme-base-color-light-hsl: 0 0% 0% !important;
+	--custom-theme-base-color-light: transparent !important;
+	--custom-theme-text-color-light: transparent !important;
+	--custom-theme-base-color-dark-hsl: 0 0% 0% !important;
+	--custom-theme-base-color-dark: transparent !important;
+	--custom-theme-text-color-dark: transparent !important;
+}	
 /* --- Прозрачная кнопка "Отправить запрос дружбы" --- */
 
 /* 1. Убираем фон у самой кнопки */
@@ -538,6 +538,7 @@ div[class*="shop_"] {
 		border-color: rgba(255, 255, 255, 0.5) !important;
 
 	}
+
 
 
 
