@@ -343,7 +343,7 @@
 }
 
 .theme-dark .scrollableContainer__74017, .theme-dark .autocompleteInner__13533 {
-	background-color: var(--background);
+	background-color: rgb(18 17 17 / 80%) !important;
 }
 
 .theme-dark .replying__5126c:hover {
@@ -520,6 +520,7 @@ div[class*="shop_"] {
 		border-color: rgba(255, 255, 255, 0.5) !important;
 
 	}
+
 
 
 
