@@ -532,29 +532,6 @@ div[class*="shop_"] {
 [class*="auditLogItem_"] {
     background-color: rgba(0, 0, 0, 0.4) !important;
 }
-	/* Прозрачный фон для кнопки "Добавить в друзья" */
-	div[class*="addFriend_"][class*="item_"] {
-		background-color: transparent !important;
-		background: transparent !important;
-	}
-	div[class*="addFriend_"][class*="item_"]:hover {
-		background-color: transparent !important;
-	}
-	/* 2. Состояние ПОСЛЕ НАЖАТИЯ (Активная вкладка) */
-	div[class*="addFriend_"][aria-selected="true"] {
-		background-color: transparent !important;
-		background: transparent !important;
-		color: #000000 !important;
-	}
-.root__49fc1 {
-	background-color: rgb(0 0 0);
-	border: 1px solid var(--border-normal);
-	border-radius: var(--radius-md);
-	margin: 0 auto;
-	max-height: 100%;
-	pointer-events: all;
-	position: relative;
-}
 /* --- Прозрачная кнопка "Отправить запрос дружбы" --- */
 
 /* 1. Убираем фон у самой кнопки */
@@ -579,3 +556,4 @@ div[class*="shop_"] {
 		border-color: rgba(255, 255, 255, 0.5) !important;
 
 	}
+
