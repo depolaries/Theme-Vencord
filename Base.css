@@ -1,164 +1,233 @@
-﻿/* ========================================================================
-   1. ПЕРЕМЕННЫЕ И КОНФИГУРАЦИЯ (:root)
+/**
+ * @name Base
+ * @description Shared theme layer. Keep this file in GitHub and import it once.
+ */
+
+/* ========================================================================
+   1. TOKENS (defaults for static behavior)
    ======================================================================== */
 :root,
 .visual-refresh,
 .visual-refresh.theme-dark {
-	/* --- 1.1 Основные цвета --- */
-	--highlight: rgb(var(--rgb-highlight));
-	--rgb-background: 0, 0, 0;
-	--background: rgb(var(--rgb-background));
-	--rgb-text: 197, 200, 198;
-	--text: rgb(var(--rgb-text));
-	/* --- 1.2 Цвета статусов --- */
-	--rgb-online-color: 57, 255, 20;
-	--online-color: rgb(var(--rgb-online-color));
-	--rgb-afk-color: 255, 255, 51;
-	--afk-color: rgb(var(--rgb-afk-color));
-	--rgb-dnd-color: 255, 0, 0;
-	--dnd-color: rgb(var(--rgb-dnd-color));
-	--rgb-streaming-color: 188, 19, 254;
-	--streaming-color: rgb(var(--rgb-streaming-color));
-	--rgb-close-button: 212, 18, 39;
-	--close-button: rgb(var(--rgb-close-button));
-	/* --- 1.3 Переопределение системных переменных Discord (делаем их пустыми/прозрачными) --- */
-	--background-primary: var(--background);
-	--background-mobile-primary: var(--background);
-	--background-secondary: var(--background) !important;
-	--background-mobile-secondary: var(--background);
-	--background-secondary-alt: var(--background);
-	--background-tertiary: var(--background);
-	--background-accent: var(--background);
-	--background-floating: var(--background);
-	--background-nested-floating: var(--background);
-	--background-base-lowest: var(--background);
-	--background-base-low: var(--background);
-	--background-surface-high: var(--background);
-	--modal-background: var(--background);
-	--modal-footer-background: var(--background);
-	--bg-surface-overlay: var(--background);
-	--activity-card-background: var(--background);
-	--chat-background: var(--background);
-	--chat-input-container-background: var(--background);
-	--input-background: var(--background);
-	--channeltextarea-background: var(--background);
-	--primary-630: var(--background);
-	--bg-brand: var(--highlight);
-	/* --- 1.4 Текст и заголовки --- */
-	--header-primary: rgb(var(--rgb-highlight));
-	--header-secondary: rgb(var(--rgb-highlight));
-	--text-normal: var(--text);
-	--text-muted: var(--text);
-	--text-link: var(--highlight);
-	--text-link-low-saturation: rgba(var(--rgb-highlight), 50%);
-	--text-positive: var(--online-color);
-	--text-warning: var(--afk-color);
-	--text-danger: var(--dnd-color);
-	--text-brand: var(--highlight);
-	--interactive-muted: rgba(var(--rgb-highlight), 20%);
-	--interactive-normal: rgba(var(--rgb-highlight), 50%);
-	--interactive-hover: rgba(var(--rgb-highlight), 100%);
-	--interactive-active: var(--highlight);
-	/* --- 1.5 Элементы интерфейса --- */
-	--chat-border: var(--highlight);
-	--textbox-markdown-syntax: var(--highlight);
-	--logo-primary: var(--highlight);
-	--control-brand-foreground: var(--highlight);
-	--control-brand-foreground-new: var(--highlight);
-	--spoiler-hidden-background: var(--highlight);
-	--spoiler-revealed-background: rgba(var(--rgb-highlight), 20%);
-	--border-faint: rgb(var(--rgb-highlight));
-	--border-subtle: rgb(var(--rgb-highlight));
-	--app-border-frame: rgb(var(--rgb-highlight));
-	/* --- 1.6 Модификаторы фона (hover, active) --- */
-	--background-modifier-accent: rgb(var(--rgb-highlight));
-	--background-modifier-hover: rgba(var(--rgb-highlight), 10%);
-	--background-modifier-active: rgba(var(--rgb-highlight), 30%);
-	--background-modifier-selected: var(--rgb-highlight);
-	--background-mentioned: rgba(var(--rgb-highlight), 30%);
-	--background-mentioned-hover: rgba(var(--rgb-highlight), 40%);
-	--background-message-hover: rgba(var(--rgb-highlight), 10%);
-	--background-message-highlight: rgba(var(--rgb-highlight), 30%);
-	--background-message-highlight-hover: rgba(var(--rgb-highlight), 40%);
-	--background-message-automod: rgba(var(--rgb-highlight), 20%);
-	--background-message-automod-hover: rgba(var(--rgb-highlight), 40%);
-	/* --- 1.7 Скроллбары --- */
-	--scrollbar-thin-thumb: var(--highlight);
-	--scrollbar-auto-thumb: var(--highlight);
-	--scrollbar-auto-scrollbar-color-thumb: var(--highlight);
-	--scrollbar-thin-track: transparent;
-	--scrollbar-auto-track: transparent;
-	--scrollbar-auto-scrollbar-color-track: transparent;
-	/* --- 1.8 Настройки фона --- */
-	--transition-time: .3s;
-	--background-image: unset;
-	--background-position: center;
-	--background-size: cover;
-	--background-blur: 5px;
-	--background-brightness: 100%;
-	/* --- 1.9 Кнопки (Оптимизировано) --- */
-	/* Danger */
-	--button-danger-background: rgba(var(--rgb-close-button), 20%);
-	--button-danger-background-hover: rgba(var(--rgb-close-button), 70%);
-	--button-danger-background-active: rgba(var(--rgb-close-button), 100%);
-	--button-danger-background-disabled: rgba(var(--rgb-close-button), 20%);
-	--button-outline-danger-border: rgba(var(--rgb-close-button), 50%);
-	--button-outline-danger-background: rgba(var(--rgb-close-button), 50%);
-	--button-outline-danger-background-hover: rgba(var(--rgb-close-button), 70%);
-	--button-outline-danger-background-active: rgba(var(--rgb-close-button), 100%);
-	--button-outline-danger-text: var(--rgb-text);
-	--button-outline-danger-text-hover: var(--rgb-text);
-	--button-outline-danger-text-active: var(--rgb-text);
-	/* Positive */
-	--button-positive-background: rgba(var(--rgb-online-color), 20%);
-	--button-positive-background-hover: rgba(var(--rgb-online-color), 70%);
-	--button-positive-background-active: rgba(var(--rgb-online-color), 100%);
-	--button-positive-background-disabled: rgba(var(--rgb-online-color), 20%);
-	--button-outline-positive-border: rgba(var(--rgb-online-color), 50%);
-	--button-outline-positive-background: rgba(var(--rgb-online-color), 50%);
-	--button-outline-positive-background-hover: rgba(var(--rgb-online-color), 70%);
-	--button-outline-positive-background-active: rgba(var(--rgb-online-color), 100%);
-	--button-outline-positive-text: rgba(var(--rgb-online-color), 50%);
-	--button-outline-positive-text-hover: rgba(var(--rgb-online-color), 70%);
-	/* Primary */
-	--button-primary-background: rgba(var(--rgb-highlight), 20%);
-	--button-primary-background-hover: rgba(var(--rgb-highlight), 70%);
-	--button-primary-background-active: rgba(var(--rgb-highlight), 100%);
-	--button-primary-background-disabled: rgba(var(--rgb-highlight), 20%);
-	--button-outline-primary-border: rgba(var(--rgb-highlight), 50%);
-	--button-outline-primary-background: rgba(var(--rgb-highlight), 50%);
-	--button-outline-primary-background-hover: rgba(var(--rgb-highlight), 70%);
-	--button-outline-primary-background-active: rgba(var(--rgb-highlight), 100%);
-	--button-outline-primary-text: rgba(var(--rgb-highlight), 50%);
-	--button-outline-primary-text-hover: rgba(var(--rgb-highlight), 70%);
-	/* Brand & Secondary */
-	--button-brand-background: rgba(var(--rgb-highlight), 20%);
-	--button-brand-background-hover: rgba(var(--rgb-highlight), 70%);
-	--button-brand-background-active: rgba(var(--rgb-highlight), 100%);
-	--button-secondary-background: rgba(var(--rgb-highlight), 20%);
-	--button-secondary-background-hover: rgba(var(--rgb-highlight), 70%);
-	--button-secondary-background-active: rgba(var(--rgb-highlight), 100%);
-	/* Search Popout */
-	--search-popout-option-user-nickname: var(--highlight);
-	--search-popout-option-user-username: rgba(var(--rgb-highlight), 70%);
-	--search-popout-option-filter-text: rgba(var(--rgb-highlight), 70%);
-	--search-popout-date-picker-border: 1px solid var(--highlight);
+  --tm-accent-rgb: 255, 255, 255;
+  --tm-background-rgb: 0, 0, 0;
+  --tm-background-alpha: 1;
+  --tm-text-rgb: 197, 200, 198;
+  --tm-online-rgb: 57, 255, 20;
+  --tm-idle-rgb: 255, 255, 51;
+  --tm-dnd-rgb: 255, 0, 0;
+  --tm-streaming-rgb: 188, 19, 254;
+  --tm-close-rgb: 212, 18, 39;
+
+  --tm-background-image: unset;
+  --tm-background-position: center;
+  --tm-background-size: cover;
+  --tm-background-blur: 5px;
+  --tm-background-brightness: 100%;
+  --tm-transition-time: 0.3s;
+
+  --tm-overlay-backdrop: rgba(0, 0, 0, 0.85);
+  --tm-app-text-shadow:
+    0 0 4px rgba(0, 0, 0, 0.7),
+    0 0 2px rgba(0, 0, 0, 0.9);
+
+  --tm-identity-color: #ffffff;
+  --tm-identity-font-weight: 800;
+  --tm-identity-stroke: 0.5px rgba(0, 0, 0, 0.7);
+  --tm-identity-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+
+  --tm-divider-border: rgba(0, 0, 0, 0.15);
+  --tm-divider-top-border: rgba(0, 0, 0, 0.1);
+
+  --tm-muted-text: #ffffff;
+  --tm-muted-weight: 600;
+  --tm-muted-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+
+  --tm-timestamp-color: rgba(255, 255, 255, 0.7);
+  --tm-timestamp-weight: 600;
+  --tm-timestamp-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+  --tm-timestamp-separator: rgba(255, 255, 255, 0.3);
+
+  --tm-scrollable-surface: rgba(18, 17, 17, 0.8);
+  --tm-message-reply-hover: rgba(var(--tm-accent-rgb), 60%);
+  --tm-message-reply-hover-alt: rgba(var(--tm-accent-rgb), 40%);
+  --tm-message-ephemeral: rgba(var(--tm-accent-rgb), 30%);
+
+  --tm-stream-overlay-bg: transparent;
+  --tm-stream-preview-bg: #000000;
+  --tm-stream-preview-btn-bg: rgba(30, 30, 30, 0.8);
+  --tm-stream-preview-border: rgba(255, 255, 255, 0.1);
+  --tm-stream-modal-bg: #111111;
+  --tm-stream-modal-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  --tm-stream-modal-border: rgba(255, 255, 255, 0.1);
+  --tm-stream-pill-bg: rgba(0, 0, 0, 0.5);
+  --tm-stream-pill-item-bg: rgba(255, 255, 255, 0.05);
+  --tm-stream-pill-selected-bg: #5865F2;
+  --tm-upload-modal-bg: #111111;
+  --tm-spotify-bg: transparent;
+  --tm-muted-content-color: rgb(255 255 255 / 80%);
+  --tm-audit-log-color: rgb(100 100 100);
+
+  --tm-icon-color: #1a1a1a;
+  --tm-icon-hover-color: #000000;
+  --tm-icon-filter: drop-shadow(0.5px 0.5px 0px rgba(255, 255, 255, 0.8)) drop-shadow(-0.5px -0.5px 0px rgba(255, 255, 255, 0.8));
+  --tm-icon-hover-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+  --tm-icon-transition: all 0.2s ease-in-out;
+  --tm-icon-hover-scale: 1.1;
+
+  --tm-friend-cta-hover-bg: rgba(255, 255, 255, 0.1);
+  --tm-friend-cta-hover-border: rgba(255, 255, 255, 0.5);
+  --tm-friend-cta-border: rgba(255, 255, 255, 0.2);
+
+  --highlight: rgb(var(--tm-accent-rgb));
+  --rgb-background: var(--tm-background-rgb);
+  --background: rgba(var(--tm-background-rgb), var(--tm-background-alpha));
+  --rgb-text: var(--tm-text-rgb);
+  --text: rgb(var(--tm-text-rgb));
+
+  --rgb-online-color: var(--tm-online-rgb);
+  --online-color: rgb(var(--tm-online-rgb));
+  --rgb-afk-color: var(--tm-idle-rgb);
+  --afk-color: rgb(var(--tm-idle-rgb));
+  --rgb-dnd-color: var(--tm-dnd-rgb);
+  --dnd-color: rgb(var(--tm-dnd-rgb));
+  --rgb-streaming-color: var(--tm-streaming-rgb);
+  --streaming-color: rgb(var(--tm-streaming-rgb));
+  --rgb-close-button: var(--tm-close-rgb);
+  --close-button: rgb(var(--tm-close-rgb));
+
+  --background-primary: var(--background);
+  --background-mobile-primary: var(--background);
+  --background-secondary: var(--background);
+  --background-mobile-secondary: var(--background);
+  --background-secondary-alt: var(--background);
+  --background-tertiary: var(--background);
+  --background-accent: var(--background);
+  --background-floating: var(--background);
+  --background-nested-floating: var(--background);
+  --background-base-lowest: var(--background);
+  --background-base-low: var(--background);
+  --background-surface-high: var(--background);
+  --modal-background: var(--background);
+  --modal-footer-background: var(--background);
+  --bg-surface-overlay: var(--background);
+  --activity-card-background: var(--background);
+  --chat-background: var(--background);
+  --chat-input-container-background: var(--background);
+  --input-background: var(--background);
+  --channeltextarea-background: var(--background);
+  --primary-630: var(--background);
+  --bg-brand: var(--highlight);
+
+  --header-primary: var(--highlight);
+  --header-secondary: var(--highlight);
+  --text-normal: var(--text);
+  --text-muted: var(--text);
+  --text-link: var(--highlight);
+  --text-link-low-saturation: rgba(var(--tm-accent-rgb), 50%);
+  --text-positive: var(--online-color);
+  --text-warning: var(--afk-color);
+  --text-danger: var(--dnd-color);
+  --text-brand: var(--highlight);
+  --interactive-muted: rgba(var(--tm-accent-rgb), 20%);
+  --interactive-normal: rgba(var(--tm-accent-rgb), 50%);
+  --interactive-hover: rgba(var(--tm-accent-rgb), 100%);
+  --interactive-active: var(--highlight);
+
+  --chat-border: var(--highlight);
+  --textbox-markdown-syntax: var(--highlight);
+  --logo-primary: var(--highlight);
+  --control-brand-foreground: var(--highlight);
+  --control-brand-foreground-new: var(--highlight);
+  --spoiler-hidden-background: var(--highlight);
+  --spoiler-revealed-background: rgba(var(--tm-accent-rgb), 20%);
+  --border-faint: rgb(var(--tm-accent-rgb));
+  --border-subtle: rgb(var(--tm-accent-rgb));
+  --app-border-frame: rgb(var(--tm-accent-rgb));
+
+  --background-modifier-accent: rgb(var(--tm-accent-rgb));
+  --background-modifier-hover: rgba(var(--tm-accent-rgb), 10%);
+  --background-modifier-active: rgba(var(--tm-accent-rgb), 30%);
+  --background-modifier-selected: rgb(var(--tm-accent-rgb));
+  --background-mentioned: rgba(var(--tm-accent-rgb), 30%);
+  --background-mentioned-hover: rgba(var(--tm-accent-rgb), 40%);
+  --background-message-hover: rgba(var(--tm-accent-rgb), 10%);
+  --background-message-highlight: rgba(var(--tm-accent-rgb), 30%);
+  --background-message-highlight-hover: rgba(var(--tm-accent-rgb), 40%);
+  --background-message-automod: rgba(var(--tm-accent-rgb), 20%);
+  --background-message-automod-hover: rgba(var(--tm-accent-rgb), 40%);
+
+  --scrollbar-thin-thumb: var(--highlight);
+  --scrollbar-auto-thumb: var(--highlight);
+  --scrollbar-auto-scrollbar-color-thumb: var(--highlight);
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-track: transparent;
+  --scrollbar-auto-scrollbar-color-track: transparent;
+
+  --transition-time: var(--tm-transition-time);
+  --background-image: var(--tm-background-image);
+  --background-position: var(--tm-background-position);
+  --background-size: var(--tm-background-size);
+  --background-blur: var(--tm-background-blur);
+  --background-brightness: var(--tm-background-brightness);
+
+  --button-danger-background: rgba(var(--tm-close-rgb), 20%);
+  --button-danger-background-hover: rgba(var(--tm-close-rgb), 70%);
+  --button-danger-background-active: rgba(var(--tm-close-rgb), 100%);
+  --button-danger-background-disabled: rgba(var(--tm-close-rgb), 20%);
+  --button-outline-danger-border: rgba(var(--tm-close-rgb), 50%);
+  --button-outline-danger-background: rgba(var(--tm-close-rgb), 50%);
+  --button-outline-danger-background-hover: rgba(var(--tm-close-rgb), 70%);
+  --button-outline-danger-background-active: rgba(var(--tm-close-rgb), 100%);
+  --button-outline-danger-text: rgb(var(--tm-text-rgb));
+  --button-outline-danger-text-hover: rgb(var(--tm-text-rgb));
+  --button-outline-danger-text-active: rgb(var(--tm-text-rgb));
+
+  --button-positive-background: rgba(var(--tm-online-rgb), 20%);
+  --button-positive-background-hover: rgba(var(--tm-online-rgb), 70%);
+  --button-positive-background-active: rgba(var(--tm-online-rgb), 100%);
+  --button-positive-background-disabled: rgba(var(--tm-online-rgb), 20%);
+  --button-outline-positive-border: rgba(var(--tm-online-rgb), 50%);
+  --button-outline-positive-background: rgba(var(--tm-online-rgb), 50%);
+  --button-outline-positive-background-hover: rgba(var(--tm-online-rgb), 70%);
+  --button-outline-positive-background-active: rgba(var(--tm-online-rgb), 100%);
+  --button-outline-positive-text: rgba(var(--tm-online-rgb), 50%);
+  --button-outline-positive-text-hover: rgba(var(--tm-online-rgb), 70%);
+
+  --button-primary-background: rgba(var(--tm-accent-rgb), 20%);
+  --button-primary-background-hover: rgba(var(--tm-accent-rgb), 70%);
+  --button-primary-background-active: rgba(var(--tm-accent-rgb), 100%);
+  --button-primary-background-disabled: rgba(var(--tm-accent-rgb), 20%);
+  --button-outline-primary-border: rgba(var(--tm-accent-rgb), 50%);
+  --button-outline-primary-background: rgba(var(--tm-accent-rgb), 50%);
+  --button-outline-primary-background-hover: rgba(var(--tm-accent-rgb), 70%);
+  --button-outline-primary-background-active: rgba(var(--tm-accent-rgb), 100%);
+  --button-outline-primary-text: rgba(var(--tm-accent-rgb), 50%);
+  --button-outline-primary-text-hover: rgba(var(--tm-accent-rgb), 70%);
+  --button-brand-background: rgba(var(--tm-accent-rgb), 20%);
+  --button-brand-background-hover: rgba(var(--tm-accent-rgb), 70%);
+  --button-brand-background-active: rgba(var(--tm-accent-rgb), 100%);
+  --button-secondary-background: rgba(var(--tm-accent-rgb), 20%);
+  --button-secondary-background-hover: rgba(var(--tm-accent-rgb), 70%);
+  --button-secondary-background-active: rgba(var(--tm-accent-rgb), 100%);
+
+  --search-popout-option-user-nickname: var(--highlight);
+  --search-popout-option-user-username: rgba(var(--tm-accent-rgb), 70%);
+  --search-popout-option-filter-text: rgba(var(--tm-accent-rgb), 70%);
+  --search-popout-date-picker-border: 1px solid var(--highlight);
 }
 
 /* ========================================================================
-   2. БАЗОВЫЕ НАСТРОЙКИ (ФОН И ЯДРО)
+   2. BACKGROUND AND BASE TRANSPARENCY
    ======================================================================== */
-
-/* Применение фона к body */
 .theme-dark body {
-	background-color: var(--background);
-	background-image: var(--background-image);
-	background-position: var(--background-position);
-	background-size: var(--background-size);
-	backdrop-filter: blur(var(--background-blur)) brightness(var(--background-brightness));
+  background-color: var(--background);
+  background-image: var(--background-image);
+  background-position: var(--background-position);
+  background-size: var(--background-size);
+  backdrop-filter: blur(var(--background-blur)) brightness(var(--background-brightness));
 }
 
-/* ГЛАВНЫЙ БЛОК ПРОЗРАЧНОСТИ: Делаем все основные контейнеры прозрачными */
 .theme-dark .appMount__51fd7,
 .theme-dark .app__160d8,
 .theme-dark .bg__960e4,
@@ -192,339 +261,435 @@
 .theme-dark .pageWrapper_a3a4ce,
 .theme-dark .footer__214dc,
 .theme-dark .container_f369db,
-.theme-dark .panels__5e434 {
-	background: rgba(0, 0, 0, 0) !important;
+.theme-dark .panels__5e434,
+.theme-dark .panel__5dec7 {
+  background: transparent !important;
 }
 
-/* Убираем лишние декоративные элементы */
 .theme-dark .children__9293f:after,
 .theme-dark .form_f75fb0::before,
 .theme-dark .option__56fec:after {
-	display: none;
+  display: none;
 }
 
 /* ========================================================================
-   3. ИНТЕРФЕЙС И КОМПОНЕНТЫ
+   3. CORE UI
    ======================================================================== */
-
-/* --- Иконки статусов (SVG recolor) --- */
 .theme-dark #app-mount .wrapper__44b0c rect[fill="#593695"],
-.theme-dark #app-mount .wrapper__44b0c rect[mask*=streaming] {
-	fill: var(--streaming-color);
+.theme-dark #app-mount .wrapper__44b0c rect[mask*="streaming"] {
+  fill: var(--streaming-color);
 }
 
 .theme-dark #app-mount .wrapper__44b0c rect[fill="#43b581"],
-.theme-dark #app-mount .wrapper__44b0c rect[mask*=online] {
-	fill: var(--online-color);
+.theme-dark #app-mount .wrapper__44b0c rect[mask*="online"] {
+  fill: var(--online-color);
 }
 
 .theme-dark #app-mount .wrapper__44b0c rect[fill="#faa61a"],
-.theme-dark #app-mount .wrapper__44b0c rect[mask*=idle] {
-	fill: var(--afk-color);
+.theme-dark #app-mount .wrapper__44b0c rect[mask*="idle"] {
+  fill: var(--afk-color);
 }
 
 .theme-dark #app-mount .wrapper__44b0c rect[fill="#f04747"],
-.theme-dark #app-mount .wrapper__44b0c rect[mask*=dnd] {
-	fill: var(--dnd-color);
+.theme-dark #app-mount .wrapper__44b0c rect[mask*="dnd"] {
+  fill: var(--dnd-color);
 }
 
-/* --- Бейджи и непрочитанное --- */
 .theme-dark .numberBadge__40d6f {
-	background-color: rgba(var(--rgb-highlight), 70%) !important;
-	color: var(--background);
+  background-color: rgba(var(--tm-accent-rgb), 70%) !important;
+  color: var(--background);
 }
 
 .theme-dark .isUnread__908e2 {
-	border: 1px solid var(--highlight);
+  border: 1px solid var(--highlight);
 }
 
 .theme-dark .content__908e2 {
-	color: rgb(255 255 255 / 80%);
+  color: var(--tm-muted-content-color);
 }
 
 .theme-dark .wrapper__2ea32:hover .unread__2ea32 {
-	background-color: var(--highlight);
+  background-color: var(--highlight);
 }
 
 .theme-dark .unreadPillCapStroke__908e2 {
-	color: var(--highlight);
-	fill: var(--highlight);
+  color: var(--highlight);
+  fill: var(--highlight);
 }
 
 .theme-dark .unreadPill__908e2 {
-	background-color: var(--highlight);
-	color: var(--background) !important;
+  background-color: var(--highlight);
+  color: var(--background) !important;
 }
 
-.theme-dark .bar__3b95d, .theme-dark .newMessagesBar__0f481 {
-	background-color: var(--highlight);
-	color: var(--background);
+.theme-dark .bar__3b95d,
+.theme-dark .newMessagesBar__0f481 {
+  background-color: var(--highlight);
+  color: var(--background);
 }
 
-/* --- Список участников (Градиентные разделители) --- */
 .theme-dark .guildSeparator-33mFX6 {
-	background-color: var(--highlight);
-	border-radius: 2px;
+  background-color: var(--highlight);
+  border-radius: 2px;
 }
 
 .theme-dark .membersGroup_c8ffbb {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: var(--highlight);
-	padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--highlight);
+  padding: 0;
 }
 
-	.theme-dark .membersGroup_c8ffbb::before,
-	.theme-dark .membersGroup_c8ffbb::after {
-		content: "";
-		width: 100%;
-		height: 2px;
-		display: inline-block;
-	}
+.theme-dark .membersGroup_c8ffbb::before,
+.theme-dark .membersGroup_c8ffbb::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  display: inline-block;
+}
 
-	.theme-dark .membersGroup_c8ffbb::before {
-		margin-right: 3px;
-		background: linear-gradient(90deg, rgba(var(--rgb-highlight), 0) 0%, rgba(var(--rgb-highlight), 1) 100%);
-	}
+.theme-dark .membersGroup_c8ffbb::before {
+  margin-right: 3px;
+  background: linear-gradient(90deg, rgba(var(--tm-accent-rgb), 0) 0%, rgba(var(--tm-accent-rgb), 1) 100%);
+}
 
-	.theme-dark .membersGroup_c8ffbb::after {
-		margin-left: 3px;
-		background: linear-gradient(90deg, rgba(var(--rgb-highlight), 1) 0%, rgba(var(--rgb-highlight), 0) 100%);
-	}
+.theme-dark .membersGroup_c8ffbb::after {
+  margin-left: 3px;
+  background: linear-gradient(90deg, rgba(var(--tm-accent-rgb), 1) 0%, rgba(var(--tm-accent-rgb), 0) 100%);
+}
 
 .theme-dark .containerDefault__29444 {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-	.theme-dark .containerDefault__29444 div div {
-		color: var(--highlight);
-	}
+.theme-dark .containerDefault__29444 div div {
+  color: var(--highlight);
+}
 
-	.theme-dark .containerDefault__29444::before,
-	.theme-dark .containerDefault__29444::after {
-		content: "";
-		width: 100%;
-		height: 2px;
-		display: inline-block;
-	}
+.theme-dark .containerDefault__29444::before,
+.theme-dark .containerDefault__29444::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  display: inline-block;
+}
 
-	.theme-dark .containerDefault__29444::before {
-		margin-right: -11px;
-		background: linear-gradient(90deg, rgba(var(--rgb-highlight), 0) 0%, rgba(var(--rgb-highlight), 1) 100%);
-	}
+.theme-dark .containerDefault__29444::before {
+  margin-right: -11px;
+  background: linear-gradient(90deg, rgba(var(--tm-accent-rgb), 0) 0%, rgba(var(--tm-accent-rgb), 1) 100%);
+}
 
-	.theme-dark .containerDefault__29444::after {
-		margin-left: -3px;
-		background: linear-gradient(90deg, rgba(var(--rgb-highlight), 1) 0%, rgba(var(--rgb-highlight), 0) 100%);
-	}
+.theme-dark .containerDefault__29444::after {
+  margin-left: -3px;
+  background: linear-gradient(90deg, rgba(var(--tm-accent-rgb), 1) 0%, rgba(var(--tm-accent-rgb), 0) 100%);
+}
 
-/* --- Чат и Сообщения --- */
 .theme-dark .reactionMe__23977 {
-	border-color: var(--highlight) !important;
+  border-color: var(--highlight) !important;
 }
 
-	.theme-dark .reactionMe__23977 .reactionCount__23977 {
-		color: var(--background) !important;
-	}
-
-.theme-dark .reaction__23977, .theme-dark .reactionBtn__23977 {
-	border-color: rgba(var(--rgb-highlight), 30%);
+.theme-dark .reactionMe__23977 .reactionCount__23977 {
+  color: var(--background) !important;
 }
 
-	.theme-dark .reactionBtn__23977:hover {
-		border-color: var(--rgb-highlight);
-	}
-
-.theme-dark .botText__82f07, .theme-dark .botTagVerified__82f07 {
-	color: var(--background);
+.theme-dark .reaction__23977,
+.theme-dark .reactionBtn__23977 {
+  border-color: rgba(var(--tm-accent-rgb), 30%);
 }
 
-.theme-dark .scrollableContainer__74017, .theme-dark .autocompleteInner__13533 {
-	background-color: rgb(18 17 17 / 80%) !important;
+.theme-dark .reactionBtn__23977:hover {
+  border-color: var(--tm-accent-rgb);
+}
+
+.theme-dark .botText__82f07,
+.theme-dark .botTagVerified__82f07 {
+  color: var(--background);
+}
+
+.theme-dark .scrollableContainer__74017,
+.theme-dark .autocompleteInner__13533 {
+  background-color: var(--tm-scrollable-surface) !important;
 }
 
 .theme-dark .replying__5126c:hover {
-	background-color: rgba(var(--rgb-highlight), 60%) !important;
+  background-color: var(--tm-message-reply-hover) !important;
 }
 
 .theme-dark .ephemeral__5126c {
-	background-color: rgba(var(--rgb-highlight), 30%);
+  background-color: var(--tm-message-ephemeral);
 }
 
-	.theme-dark .ephemeral__5126c:hover {
-		background-color: rgba(var(--rgb-highlight), 40%) !important;
-	}
+.theme-dark .ephemeral__5126c:hover {
+  background-color: var(--tm-message-reply-hover-alt) !important;
+}
 
 .theme-dark .mentioned__5126c::before {
-	background-color: var(--highlight);
+  background-color: var(--highlight);
 }
 
-/* --- Поиск и выделение --- */
 .theme-dark .selected_c69b6d .icon__2ea32,
 .theme-dark .selected_c69b6d .actionIcon_c69b6d:hover,
 .theme-dark .selected_c69b6d .name__2ea32 {
-	color: var(--highlight) !important;
+  color: var(--highlight) !important;
 }
 
 .theme-dark .selected_c69b6d .link__2ea32 {
-	background-color: rgba(var(--rgb-highlight), 20%) !important;
+  background-color: rgba(var(--tm-accent-rgb), 20%) !important;
 }
 
-/* --- Общие элементы (Upsell, Categories, Headers) --- */
-.theme-dark .contentWrapper__08434, .theme-dark .header__8ef02, .theme-dark .header_fed6d3,
-.theme-dark .header_c0e32c, .theme-dark .categoryList__3ad28, .theme-dark .scroller_affa7e,
-.theme-dark .packHeader_e94b8c, .theme-dark .header_c656ac, .theme-dark .inspector_aeaaeb,
-.theme-dark .emojiPicker_c0e32c, .theme-dark .unicodeShortcut_b9ee0c,
-.theme-dark #gif-picker-tab-panel, .theme-dark .appDetailsContainer_cb32c7 {
-	background-color: var(--background);
+.theme-dark .contentWrapper__08434,
+.theme-dark .header__8ef02,
+.theme-dark .header_fed6d3,
+.theme-dark .header_c0e32c,
+.theme-dark .categoryList__3ad28,
+.theme-dark .scroller_affa7e,
+.theme-dark .packHeader_e94b8c,
+.theme-dark .header_c656ac,
+.theme-dark .inspector_aeaaeb,
+.theme-dark .emojiPicker_c0e32c,
+.theme-dark .unicodeShortcut_b9ee0c,
+.theme-dark #gif-picker-tab-panel,
+.theme-dark .appDetailsContainer_cb32c7 {
+  background-color: var(--background);
 }
 
 .theme-dark .emptyGuildUpsell_e94b8c {
-	background-color: var(--background);
-	border: 1px solid var(--highlight);
-	margin-bottom: 2px;
+  background-color: var(--background);
+  border: 1px solid var(--highlight);
+  margin-bottom: 2px;
 }
 
-	.theme-dark .emptyGuildUpsell_e94b8c .contents__201d5 {
-		color: var(--highlight);
-	}
+.theme-dark .emptyGuildUpsell_e94b8c .contents__201d5 {
+  color: var(--highlight);
+}
 
-.theme-dark .categoryItemDefaultCategorySelected_b9ee0c, .theme-dark .stickerCategoryGenericSelected__3ad28 {
-	background-color: var(--highlight);
+.theme-dark .categoryItemDefaultCategorySelected_b9ee0c,
+.theme-dark .stickerCategoryGenericSelected__3ad28 {
+  background-color: var(--highlight);
 }
 
 .theme-dark .contentWrapper__9c62c {
-	--bg-base-secondary: var(--background);
-	--input-border: var(--highlight);
-	--text-link: var(--highlight);
-	--text-brand: var(--highlight);
-	--bg-mod-subtle: var(--highlight);
+  --bg-base-secondary: var(--background);
+  --input-border: var(--highlight);
+  --text-link: var(--highlight);
+  --text-brand: var(--highlight);
+  --bg-mod-subtle: var(--highlight);
 }
 
 /* ========================================================================
-   4. ФУНКЦИОНАЛЬНЫЕ ФИКСЫ (ОКНА, ЗВОНКИ, ПОПАПЫ)
+   4. MODIFIERS / MISC FIXES
    ======================================================================== */
-
-/* --- 4.1 Голосовой чат (Прозрачность) --- */
-.container__133bf, .peopleColumn_c2739c, .tabBody__133bf, .nowPlayingColumn__133bf,
-[class*="callContainer_"], [class*="videoGrid_"], [class*="tile_"], [class*="root_bfe55a"],
-[class*="streamPreview_"], [class*="videoControls_"], [class*="wrapper_c19a55"],
-section[class*="container_"], .visual-refresh main[class*="container_"], [class*="chat_f75fb0"] {
-	background-color: transparent !important;
-	background: transparent !important;
-	--bg-base-primary: transparent !important;
-	--bg-surface-raised: transparent !important;
-	--background-primary: transparent !important;
-	border: none !important;
+.theme-dark .appMount__51fd7 * {
+  text-shadow: var(--tm-app-text-shadow) !important;
 }
 
-	.tabBody__133bf:before {
-		display: none !important;
-	}
+#app-mount > div.appAsidePanelWrapper_a3002d > div > div.app_a3002d > div > div.layers__960e4.layers__160d8 > div > div > div > div.content__5e434 > div.page__5e434 > div > div.guildSidebar_f75fb0 > div > div
+[class*="username_"],
+[class*="nickname_"],
+[class*="name_"] {
+  color: var(--tm-identity-color) !important;
+  font-weight: var(--tm-identity-font-weight) !important;
+  -webkit-text-stroke: var(--tm-identity-stroke);
+  text-shadow: var(--tm-identity-shadow) !important;
+}
 
-/* --- 4.2 Модальные окна (Восстановление фона внутри окон) --- */
-/* Затемнение фона */
+[class*="peopleListItem_"],
+[class*="divider_"] {
+  border-color: var(--tm-divider-border) !important;
+}
+
+[class*="peopleListItem_"] {
+  border-top: 1px solid var(--tm-divider-top-border) !important;
+}
+
+#app-mount div[data-text-variant="text-xs/normal"][style*="color: var(--text-muted)"] {
+  color: var(--tm-muted-text) !important;
+  font-weight: var(--tm-muted-weight) !important;
+  text-shadow: var(--tm-muted-shadow) !important;
+}
+
+#app-mount [class*="timestampInline_"] time {
+  color: var(--tm-timestamp-color) !important;
+  font-weight: var(--tm-timestamp-weight) !important;
+  text-shadow: var(--tm-timestamp-shadow) !important;
+}
+
+#app-mount [class*="timestampInline_"] i[class*="separator_"] {
+  color: var(--tm-timestamp-separator) !important;
+  text-shadow: none !important;
+}
+
+[class*="pulseGradient_"] {
+  display: none !important;
+  opacity: 0 !important;
+  animation: none !important;
+}
+
+html body #app-mount [class*="overlayContainer_"] {
+  background: var(--tm-stream-overlay-bg) !important;
+}
+
+html body #app-mount [class*="streamPreview_"] {
+  background: var(--tm-stream-preview-bg) !important;
+  opacity: 1 !important;
+  border: 1px solid var(--tm-stream-preview-border) !important;
+}
+
+html body #app-mount [class*="streamPreview_"] button {
+  background-color: var(--tm-stream-preview-btn-bg) !important;
+}
+
+[class*="container__8a031"],
+div[data-mana-component="modal"] {
+  background: var(--tm-stream-modal-bg) !important;
+  opacity: 1 !important;
+  box-shadow: var(--tm-stream-modal-shadow) !important;
+  border: 1px solid var(--tm-stream-modal-border) !important;
+}
+
+[class*="root_a55fdc"],
+[class*="header_a55fdc"],
+[class*="content_a55fdc"] {
+  background: var(--tm-stream-modal-bg) !important;
+}
+
+[class*="pillContainer_"] {
+  background-color: var(--tm-stream-pill-bg) !important;
+}
+
+[class*="pillItem_"] {
+  background-color: var(--tm-stream-pill-item-bg) !important;
+}
+
+[class*="pillItemSelected_"] {
+  background-color: var(--tm-stream-pill-selected-bg) !important;
+}
+
+#vc-spotify-player {
+  background: var(--tm-spotify-bg) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.iconGroup__07f91 svg[aria-describedby*="r1fk"],
+.iconGroup__07f91 svg[aria-describedby*="r1fl"],
+[class*="iconGroup_"] [class*="icon_"] {
+  color: var(--tm-icon-color) !important;
+  filter: var(--tm-icon-filter) !important;
+  transition: var(--tm-icon-transition) !important;
+}
+
+[class*="iconGroup_"]:hover [class*="icon_"] {
+  transform: scale(var(--tm-icon-hover-scale)) !important;
+  color: var(--tm-icon-hover-color) !important;
+  filter: var(--tm-icon-hover-filter) !important;
+}
+
+[class*="iconGroup_"] path {
+  stroke: none !important;
+  fill: currentColor !important;
+}
+
+.container__133bf,
+.peopleColumn_c2739c,
+.tabBody__133bf,
+.nowPlayingColumn__133bf,
+[class*="callContainer_"],
+[class*="videoGrid_"],
+[class*="tile_"],
+[class*="root_bfe55a"],
+[class*="streamPreview_"],
+[class*="videoControls_"],
+[class*="wrapper_c19a55"],
+section[class*="container_"],
+.visual-refresh main[class*="container_"],
+[class*="chat_f75fb0"] {
+  background-color: transparent !important;
+  background: transparent !important;
+  --bg-base-primary: transparent !important;
+  --bg-surface-raised: transparent !important;
+  --background-primary: transparent !important;
+  border: none !important;
+}
+
+.tabBody__133bf:before {
+  display: none !important;
+}
+
 [class*="backdrop_"] {
-	background-color: rgba(0, 0, 0, 0.85) !important;
+  background-color: var(--tm-overlay-backdrop) !important;
 }
-/* Фон путешествия */
+
 .container__551b0 {
-	background: transparent !important;
+  background: transparent !important;
 }
-/* Цвет текста в журнале аудита */
+
 .timestamp__43dab {
-	color: rgb(100 100 100);
+  color: var(--tm-audit-log-color);
 }
-/* Фон заданий */
+
 .scroller__23746 {
-	background-color: transparent !important;
+  background-color: transparent !important;
 }
-/* Фон магазина */
+
 div[class*="shop_"] {
-	background-color: transparent !important;
-
-	.filterBar__11877 {
-		background-color: transparent !important;
-	}
-	/* Убираем фон у главного контейнера страницы */
-	.page__1feb0 {
-		background-color: transparent !important;
-		background: transparent !important;
-	}
-	/* Убираем фон у области прокрутки и обертки инвентаря */
-	.shopScroll__1feb0,
-	.inventoryWrapper__1feb0,
-	.inventory__1feb0 {
-		background-color: transparent !important;
-		background: transparent !important;
-	}
-	/* Убираем фон у боковой панели с фильтрами (если нужно) */
-	.filterOverlay__1feb0,
-	.filterOverlayContent__1feb0 {
-		background-color: transparent !important;
-		background: transparent !important;
-	}
-	/* Убираем фон у контейнера диалога */
-	div[role="dialog"] {
-		background: transparent !important;
-		background-color: transparent !important;
-	}
-		/* Восстанавливаем непрозрачность для содержимого окон */
-		div[role="dialog"] [class*="root_"],
-		div[role="dialog"] form,
-		div[role="dialog"] [class*="footer_"],
-		div[role="dialog"] [class*="header_"],
-		div[role="dialog"] [class*="content_"],
-		div[role="dialog"] [class*="body_"],
-		[class*="uploadModal_"],
-		[class*="focusLock_"] > [class*="root_"] {
-			background-image: none !important;
-			--bg-overlay-chat: #111111 !important;
-			--bg-overlay-1: #111111 !important;
-			--bg-surface-overlay: #111111 !important;
-			--bg-base-primary: #111111 !important;
-			backdrop-filter: none !important;
-			opacity: 1 !important;
-			box-shadow: 0 0 15px rgba(0,0,0,0.5) !important;
-		}
-			/* Фикс для окна загрузки файла */
-			[class*="uploadModal_"] [class*="inner_"] {
-				background-color: #181818 !important;
-				border: 2px solid #111111 !important;
-			}
+  background-color: transparent !important;
 }
-/* --- Прозрачная кнопка "Отправить запрос дружбы" --- */
 
-/* 1. Убираем фон у самой кнопки */
+div[class*="shop_"] .filterBar__11877,
+div[class*="shop_"] .page__1feb0,
+div[class*="shop_"] .shopScroll__1feb0,
+div[class*="shop_"] .inventoryWrapper__1feb0,
+div[class*="shop_"] .inventory__1feb0,
+div[class*="shop_"] .filterOverlay__1feb0,
+div[class*="shop_"] .filterOverlayContent__1feb0,
+div[class*="shop_"] div[role="dialog"] {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+div[role="dialog"] [class*="root_"],
+div[role="dialog"] form,
+div[role="dialog"] [class*="footer_"],
+div[role="dialog"] [class*="header_"],
+div[role="dialog"] [class*="content_"],
+div[role="dialog"] [class*="body_"],
+[class*="uploadModal_"],
+[class*="focusLock_"] > [class*="root_"] {
+  background-image: none !important;
+  --bg-overlay-chat: var(--tm-stream-modal-bg) !important;
+  --bg-overlay-1: var(--tm-stream-modal-bg) !important;
+  --bg-surface-overlay: var(--tm-stream-modal-bg) !important;
+  --bg-base-primary: var(--tm-stream-modal-bg) !important;
+  backdrop-filter: none !important;
+  opacity: 1 !important;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5) !important;
+}
+
+div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
+  background-color: var(--tm-upload-modal-bg) !important;
+  border: 2px solid var(--tm-stream-modal-bg) !important;
+}
+
 #app-mount button[type="submit"][class*="primary_"] {
-	background-color: transparent !important;
-	background: transparent !important;
-	/* Добавляем легкую рамку, чтобы кнопку было видно на прозрачном фоне */
-	border: 1px solid rgba(255, 255, 255, 0.2) !important;
-	transition: all 0.2s ease !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  border: 1px solid var(--tm-friend-cta-border) !important;
+  transition: all 0.2s ease !important;
 }
 
-	/* 2. Убираем фон у внутренних контейнеров кнопки (Discord часто красит их) */
-	#app-mount button[type="submit"][class*="primary_"] [class*="buttonChildrenWrapper_"],
-	#app-mount button[type="submit"][class*="primary_"] [class*="buttonChildren_"] {
-		background-color: transparent !important;
-		background: transparent !important;
-	}
+#app-mount button[type="submit"][class*="primary_"] [class*="buttonChildrenWrapper_"],
+#app-mount button[type="submit"][class*="primary_"] [class*="buttonChildren_"] {
+  background-color: transparent !important;
+  background: transparent !important;
+}
 
-	/* 3. Эффект при наведении (когда кнопка активна и вы ввели никнейм) */
-	#app-mount button[type="submit"][class*="primary_"]:hover:not(:disabled) {
-		background-color: rgba(255, 255, 255, 0.1) !important;
-		border-color: rgba(255, 255, 255, 0.5) !important;
-
-	}
-
-
-
-
-
-
+#app-mount button[type="submit"][class*="primary_"]:hover:not(:disabled) {
+  background-color: var(--tm-friend-cta-hover-bg) !important;
+  border-color: var(--tm-friend-cta-hover-border) !important;
+}
 
 
