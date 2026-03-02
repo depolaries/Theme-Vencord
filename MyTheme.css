@@ -1,123 +1,87 @@
 /**
- * @name Мая тема
+ * @name Моя тема
  */
 
-/* ========================================================================
-   1. ИМПОРТЫ И ЗАВИСИМОСТИ
-   ======================================================================== */
-@import url('https://github.com/depolaries/Theme-Vencord/blob/main/Base.css');
+@import url('https://B4T3S.github.io/DiscordDarkNeon/css/hideUsers.css');
 @import url('https://raw.githubusercontent.com/depolaries/Theme-Vencord/main/Base.css');
-
-/* ========================================================================
-   2. ВИЗУАЛЬНАЯ КОНФИГУРАЦИЯ (ПОЛЬЗОВАТЕЛЬСКИЕ НАСТРОЙКИ)
-   ======================================================================== */
 
 :root,
 .visual-refresh,
 .visual-refresh.theme-dark {
-    /* --- 2.1 Основные цвета --- */
-    --rgb-highlight: 255, 255, 255;
-    --rgb-background: 0, 0, 0, 0;
-    --rgb-text: 40, 40, 40;
-    /* --- 2.2 Настройки Фона --- */
-    --background-image: url('https://i.ibb.co/B5n1zTT4/171acf3e6ba68f9fd5a88c61fde477b6.jpg');
-    --background-position: center;
-    --background-size: cover;
-    --background-blur: 3px;
-    --background-brightness: 80%;
-    --transition-time: .3s;
+  /* ===== БАЗОВАЯ НАСТРОЙКА ===== */
+  --tm-accent-rgb: 255, 255, 255;
+  --tm-text-rgb: 40, 40, 40;
+  --tm-background-rgb: 0, 0, 0;
+  --tm-background-alpha: 0;
+  --tm-background-image: url('https://i.ibb.co/B5n1zTT4/171acf3e6ba68f9fd5a88c61fde477b6.jpg');
+  --tm-background-position: center;
+  --tm-background-size: cover;
+  --tm-background-blur: 7px;
+  --tm-background-brightness: 80%;
+
+  --tm-online-rgb: 57, 255, 20;
+  --tm-idle-rgb: 255, 255, 51;
+  --tm-dnd-rgb: 255, 0, 0;
+  --tm-streaming-rgb: 188, 19, 254;
+  --tm-close-rgb: 212, 18, 39;
+
+  --tm-icon-color: #1a1a1a;
+  --tm-icon-hover-color: #000000;
+  --tm-icon-filter: drop-shadow(0.5px 0.5px 0px rgba(255, 255, 255, 0.8)) drop-shadow(-0.5px -0.5px 0px rgba(255, 255, 255, 0.8));
+  --tm-icon-hover-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1));
+  --tm-icon-transition: all 0.2s ease-in-out;
+  --tm-icon-hover-scale: 1.1;
+
+  --tm-friend-cta-border: rgba(255, 255, 255, 0.2);
+  --tm-friend-cta-hover-bg: rgba(255, 255, 255, 0.1);
+  --tm-friend-cta-hover-border: rgba(255, 255, 255, 0.5);
+
+  --tm-muted-content-color: rgb(255 255 255 / 80%);
+  --tm-audit-log-color: rgb(100 100 100);
 }
 
-/* --- 2.3 Типографика и Текст --- */
-.appMount__51fd7 * {
-    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7), 0px 0px 2px rgba(0, 0, 0, 0.9) !important;
+img[src*='e8396e79419904ca'] {
+  content: url('https://i.ibb.co/ZzSbpqDv/Gemini-Generated-Image-x1dfux1dfux1dfu1x.png') !important;
+  width: 48px !important;
+  height: 48px !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
 }
 
-[class*="username_"],
-[class*="nickname_"],
-[class*="name_"] {
-    color: #ffffff !important;
-    font-weight: 800 !important;
-    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.7);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1) !important;
+/* ------------------------------------------------------------------
+   PRESETS (раскомментируй один блок)
+------------------------------------------------------------------ */
+/* Пресет A: неон (небольшой сдвиг) 
+:root,
+.visual-refresh,
+.visual-refresh.theme-dark {
+  --tm-accent-rgb: 0, 255, 255;
+  --tm-background-image: url('https://i.ibb.co/B5n1zTT4/171acf3e6ba68f9fd5a88c61fde477b6.jpg');
+  --tm-background-brightness: 85%;
+  --tm-background-blur: 6px;
 }
+*/
 
-/* --- 2.4 Разделители и Линии --- */
-[class*="peopleListItem_"],
-[class*="divider_"] {
-    border-color: rgba(0, 0, 0, 0.15) !important;
+/* Пресет B: deep-black
+:root,
+.visual-refresh,
+.visual-refresh.theme-dark {
+  --tm-background-image: unset;
+  --tm-background-rgb: 0, 0, 0;
+  --tm-background-alpha: 1;
+  --tm-background-blur: 5px;
 }
+*/
 
-[class*="peopleListItem_"] {
-    border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+/* Пресет C: soft-green
+:root,
+.visual-refresh,
+.visual-refresh.theme-dark {
+  --tm-accent-rgb: 136, 255, 170;
+  --tm-text-rgb: 220, 255, 230;
+  --tm-background-image: unset;
+  --tm-background-rgb: 8, 18, 8;
+  --tm-background-alpha: 1;
+  --tm-background-brightness: 75%;
 }
-
-/* ========================================================================
-   3. ФУНКЦИОНАЛЬНЫЕ ИСПРАВЛЕНИЯ (ФИКСЫ И ПАТЧИ)
-   ======================================================================== */
-
-/* --- 3.1 Оптимизация (Убираем пульсацию загрузки) --- */
-[class*="pulseGradient_"] {
-    display: none !important;
-    opacity: 0 !important;
-    animation: none !important;
-}
-
-/* --- 3.2 Исправление Превью Стрима (Stream Preview) --- */
-html body #app-mount [class*="overlayContainer_"] {
-    background: transparent !important;
-}
-
-html body #app-mount [class*="streamPreview_"] {
-    background: #000000 !important;
-    opacity: 1 !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-
-    html body #app-mount [class*="streamPreview_"] button {
-        background-color: rgba(30, 30, 30, 0.8) !important;
-    }
-
-/* --- 3.3 Исправление Меню Выбора Экрана (Stream Modal) --- */
-[class*="container__8a031"],
-div[data-mana-component="modal"] {
-    background: #111111 !important;
-    opacity: 1 !important;
-    box-shadow: 0 0 15px rgba(0,0,0,0.8) !important;
-    border: 1px solid rgba(255,255,255,0.1) !important;
-}
-
-[class*="root_a55fdc"],
-[class*="header_a55fdc"],
-[class*="content_a55fdc"] {
-    background: #111111 !important;
-}
-
-[class*="pillContainer_"] {
-    background-color: rgba(0,0,0,0.5) !important;
-}
-
-[class*="pillItem_"] {
-    background-color: rgba(255,255,255,0.05) !important;
-}
-
-[class*="pillItemSelected_"] {
-    background-color: #5865F2 !important;
-}
-
-/* --- 3.4 Плагины и Специфические замены --- */
-/* Spotify Plugin Fix */
-#vc-spotify-player {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-/* Замена конкретной картинки/аватарки */
-img[src*="e8396e79419904ca"] {
-    content: url("https://i.ibb.co/ZzSbpqDv/Gemini-Generated-Image-x1dfux1dfux1dfu1x.png") !important;
-    width: 48px !important;
-    height: 48px !important;
-    object-fit: cover !important;
-    border-radius: 50% !important;
-}
+*/
