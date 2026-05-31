@@ -135,13 +135,6 @@ html body #app-mount [class*="overlayContainer_"] {
         box-shadow: none !important;
     }
     /* Р—Р°РјРµРЅР° РєРѕРЅРєСЂРµС‚РЅРѕР№ РєР°СЂС‚РёРЅРєРё/Р°РІР°С‚Р°СЂРєРё */
-    img[src*="e8396e79419904ca"] {
-        content: url("https://i.ibb.co/ZzSbpqDv/Gemini-Generated-Image-x1dfux1dfux1dfu1x.png") !important;
-        width: 48px !important;
-        height: 48px !important;
-        object-fit: cover !important;
-        border-radius: 50% !important;
-    }
     /* --- Р­Р»РµРіР°РЅС‚РЅС‹Рµ Р°РґР°РїС‚РёРІРЅС‹Рµ РёРєРѕРЅРєРё РјСѓС‚Р° (РўРѕРЅРєРёР№ РєРѕРЅС‚СѓСЂ) --- */
 
     .iconGroup__07f91 svg[aria-describedby*="r1fk"],
