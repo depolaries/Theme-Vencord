@@ -956,6 +956,21 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
   border-color: rgb(var(--tm-accent-rgb)) !important;
 }
 
+#app-mount [data-mana-component="layer-modal"] a,
+#app-mount [data-mana-component="layer-modal"] [class*="anchor_"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+  text-shadow: none !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] a:hover,
+#app-mount [data-mana-component="layer-modal"] [class*="anchor_"]:hover {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+
 #app-mount button[class*="primary_"]:not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]),
 #app-mount [class*="button_"][class*="primary_"]:not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]),
 #app-mount [class*="button_"][class*="brand_"]:not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]),
@@ -979,12 +994,48 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
   border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
 }
 
+#app-mount [data-mana-component="layer-modal"] a[style*="background-color: rgb(88, 101, 242)"],
+#app-mount [data-mana-component="layer-modal"] span[style*="background-color: rgb(88, 101, 242)"],
+#app-mount [data-mana-component="layer-modal"] div[style*="background-color: rgb(88, 101, 242)"]:not([role="button"]):not([class*="button_"]):not([class*="switch"]) {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+}
+
 #app-mount [style*="color: rgb(88, 101, 242)"],
 #app-mount [style*="color:#5865F2"],
 #app-mount [style*="color: #5865F2"],
 #app-mount [style*="color:#5865f2"],
 #app-mount [style*="color: #5865f2"] {
   color: rgb(var(--tm-accent-rgb)) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [role="link"],
+#app-mount [data-mana-component="layer-modal"] [class*="lookLink_"],
+#app-mount [data-mana-component="layer-modal"] [class*="colorLink_"],
+#app-mount [data-mana-component="layer-modal"] [class*="button_"][class*="link_"],
+#app-mount [data-mana-component="layer-modal"] [class*="linkButton_"],
+#app-mount [data-mana-component="layer-modal"] [style*="color: rgb(88, 101, 242)"],
+#app-mount [data-mana-component="layer-modal"] [style*="color:#5865F2"],
+#app-mount [data-mana-component="layer-modal"] [style*="color: #5865F2"],
+#app-mount [data-mana-component="layer-modal"] [style*="color:#5865f2"],
+#app-mount [data-mana-component="layer-modal"] [style*="color: #5865f2"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+  text-shadow: none !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [class*="lookLink_"] *,
+#app-mount [data-mana-component="layer-modal"] [class*="colorLink_"] *,
+#app-mount [data-mana-component="layer-modal"] [class*="button_"][class*="link_"] *,
+#app-mount [data-mana-component="layer-modal"] [class*="linkButton_"] * {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+  text-shadow: none !important;
 }
 
 #app-mount [class*="vc-switch"]:has(input:checked),
@@ -1027,12 +1078,10 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
 
 #app-mount [data-mana-component="layer-modal"] [role="tab"][aria-selected="true"]::before,
 #app-mount [data-mana-component="layer-modal"] [role="tab"][aria-selected="true"]::after,
-#app-mount [data-mana-component="layer-modal"] [class*="selected_"]::before,
-#app-mount [data-mana-component="layer-modal"] [class*="selected_"]::after,
-#app-mount [data-mana-component="layer-modal"] [class*="tabBar_"] [class*="selected_"] {
-  background-color: rgb(var(--tm-accent-rgb)) !important;
-  border-color: rgb(var(--tm-accent-rgb)) !important;
-  color: rgb(var(--tm-accent-rgb)) !important;
+#app-mount [data-mana-component="layer-modal"] [class*="tabBar_"] [class*="selected_"]::before,
+#app-mount [data-mana-component="layer-modal"] [class*="tabBar_"] [class*="selected_"]::after {
+  background-color: rgba(var(--tm-accent-rgb), 0.72) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.72) !important;
 }
 
 /* Switch geometry: keep Vencord pills and check thumbs optically centered. */
@@ -1117,5 +1166,125 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
 #app-mount [data-mana-component="layer-modal"] .vc-switch-slider svg {
   top: 50% !important;
   translate: 0 -50% !important;
+}
+
+/* Real Vencord addon cards and switches. */
+#app-mount [data-mana-component="layer-modal"] .vc-btn-primary,
+#app-mount [data-mana-component="layer-modal"] .vc-btn-base.vc-btn-primary {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(0, 0, 0, 0.10)),
+    rgba(var(--tm-accent-rgb), 0.86) !important;
+  background-color: rgba(var(--tm-accent-rgb), 0.86) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
+  color: #ffffff !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-btn-primary:hover,
+#app-mount [data-mana-component="layer-modal"] .vc-btn-base.vc-btn-primary:hover {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(0, 0, 0, 0.08)),
+    rgba(var(--tm-accent-rgb), 0.96) !important;
+  border-color: rgb(var(--tm-accent-rgb)) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-addon-card,
+#app-mount [data-mana-component="layer-modal"] .vc-card-base,
+#app-mount [data-mana-component="layer-modal"] .vc-card-normal {
+  background:
+    linear-gradient(135deg, rgba(var(--tm-accent-rgb), 0.11), rgba(0, 0, 0, 0.26)),
+    rgba(8, 8, 10, 0.44) !important;
+  border: 1px solid rgba(var(--tm-accent-rgb), 0.30) !important;
+  border-radius: 8px !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-addon-card:hover,
+#app-mount [data-mana-component="layer-modal"] .vc-card-base:hover,
+#app-mount [data-mana-component="layer-modal"] .vc-card-normal:hover {
+  background:
+    linear-gradient(135deg, rgba(var(--tm-accent-rgb), 0.16), rgba(0, 0, 0, 0.22)),
+    rgba(8, 8, 10, 0.50) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.48) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-container {
+  background-color: rgba(151, 151, 159, 0.34) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-container.vc-switch-checked,
+#app-mount [data-mana-component="layer-modal"] .vc-switch-checked {
+  background-color: rgba(var(--tm-accent-rgb), 0.88) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-slider {
+  margin: 3px !important;
+  height: 20px !important;
+  width: 28px !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+/* Main left nav: selected Home/DM/server icons should not fall back to Discord blue. */
+#app-mount [data-list-item-id="guildsnav___home"] [class*="selected_"] [class*="childWrapper_"],
+#app-mount [data-list-item-id="guildsnav___home"][class*="selected_"] [class*="childWrapper_"],
+#app-mount [class*="guilds_"] [class*="selected_"] [class*="childWrapper_"],
+#app-mount [class*="tutorialContainer_"] [class*="selected_"] [class*="childWrapper_"],
+#app-mount [class*="listItem_"] [class*="selected_"] [class*="childWrapper_"] {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0.10)),
+    rgba(var(--tm-accent-rgb), 0.86) !important;
+  background-color: rgba(var(--tm-accent-rgb), 0.86) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 1px rgba(var(--tm-accent-rgb), 0.55) !important;
+}
+
+#app-mount [data-list-item-id="guildsnav___home"] [class*="selected_"] svg,
+#app-mount [class*="guilds_"] [class*="selected_"] [class*="childWrapper_"] svg,
+#app-mount [class*="tutorialContainer_"] [class*="selected_"] [class*="childWrapper_"] svg {
+  color: #ffffff !important;
+}
+
+#app-mount [class*="guilds_"] [style*="background-color: rgb(88, 101, 242)"],
+#app-mount [class*="guilds_"] [style*="background: rgb(88, 101, 242)"] {
+  background-color: rgba(var(--tm-accent-rgb), 0.86) !important;
+  background: rgba(var(--tm-accent-rgb), 0.86) !important;
+}
+
+/* Settings selected rows/tabs: accent as a hint, not a solid unreadable block. */
+#app-mount [data-mana-component="layer-modal"] [role="tab"][aria-selected="true"],
+#app-mount [data-mana-component="layer-modal"] [class*="tabBar_"] [class*="selected_"],
+#app-mount [data-mana-component="layer-modal"] [class*="item_"][class*="selected_"],
+#app-mount [data-mana-component="layer-modal"] [class*="radioGroupOption_"][data-selected="true"],
+#app-mount [data-mana-component="layer-modal"] label[data-selected="true"],
+#app-mount [data-mana-component="layer-modal"] [aria-checked="true"][role="radio"] {
+  background: rgba(var(--tm-accent-rgb), 0.10) !important;
+  background-color: rgba(var(--tm-accent-rgb), 0.10) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.46) !important;
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [role="tab"][aria-selected="true"] *,
+#app-mount [data-mana-component="layer-modal"] [class*="tabBar_"] [class*="selected_"] *,
+#app-mount [data-mana-component="layer-modal"] [class*="item_"][class*="selected_"] *,
+#app-mount [data-mana-component="layer-modal"] [class*="radioGroupOption_"][data-selected="true"] *,
+#app-mount [data-mana-component="layer-modal"] label[data-selected="true"] * {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [class*="item_"][class*="selected_"]::before,
+#app-mount [data-mana-component="layer-modal"] [class*="item_"][class*="selected_"]::after {
+  background-color: rgba(var(--tm-accent-rgb), 0.70) !important;
+  color: #ffffff !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [role="tab"][aria-selected="true"]::before,
+#app-mount [data-mana-component="layer-modal"] [role="tab"][aria-selected="true"]::after,
+#app-mount [data-mana-component="layer-modal"] [class*="tabBar_"] [class*="selected_"]::before,
+#app-mount [data-mana-component="layer-modal"] [class*="tabBar_"] [class*="selected_"]::after {
+  background-color: rgba(var(--tm-accent-rgb), 0.72) !important;
 }
 

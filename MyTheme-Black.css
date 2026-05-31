@@ -1,21 +1,21 @@
-/**
+﻿/**
  * @name MyTheme Black
  * @description Black preset. Change --background-image to set another background.
  */
 
 /* ========================================================================
-   1. ИМПОРТЫ И ЗАВИСИМОСТИ
+   1. РРњРџРћР РўР« Р Р—РђР’РРЎРРњРћРЎРўР
    ======================================================================== */
 @import url('https://B4T3S.github.io/DiscordDarkNeon/css/hideUsers.css');
 @import url('https://raw.githubusercontent.com/depolaries/Theme-Vencord/main/Base.css');
 /* ========================================================================
-   2. ВИЗУАЛЬНАЯ КОНФИГУРАЦИЯ (ПОЛЬЗОВАТЕЛЬСКИЕ НАСТРОЙКИ)
+   2. Р’РР—РЈРђР›Р¬РќРђРЇ РљРћРќР¤РР“РЈР РђР¦РРЇ (РџРћР›Р¬Р—РћР’РђРўР•Р›Р¬РЎРљРР• РќРђРЎРўР РћР™РљР)
    ======================================================================== */
 
 :root,
 .visual-refresh,
 .visual-refresh.theme-dark {
-    /* --- 2.1 Основные цвета --- */
+    /* --- 2.1 РћСЃРЅРѕРІРЅС‹Рµ С†РІРµС‚Р° --- */
     --rgb-highlight: 90, 90, 96;
     --rgb-background: 0, 0, 0, 0;
     --rgb-text: 40, 40, 40;
@@ -23,7 +23,7 @@
     --tm-background-rgb: 0, 0, 0;
     --tm-background-alpha: 0;
     --tm-text-rgb: 40, 40, 40;
-    /* --- 2.2 Настройки Фона --- */
+    /* --- 2.2 РќР°СЃС‚СЂРѕР№РєРё Р¤РѕРЅР° --- */
     /* Background for this preset. Replace the url(...) below with another image if needed. */
     --background-image: url('https://i.ibb.co/B5n1zTT4/171acf3e6ba68f9fd5a88c61fde477b6.jpg');
     --tm-background-image: var(--background-image);
@@ -39,7 +39,7 @@
     --tm-transition-time: var(--transition-time);
 }
 
-/* --- 2.3 Типографика и Текст --- */
+/* --- 2.3 РўРёРїРѕРіСЂР°С„РёРєР° Рё РўРµРєСЃС‚ --- */
 .appMount__51fd7 * {
     text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7), 0px 0px 2px rgba(0, 0, 0, 0.9) !important;
 }
@@ -53,7 +53,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1) !important;
 }
 
-/* --- 2.4 Разделители и Линии --- */
+/* --- 2.4 Р Р°Р·РґРµР»РёС‚РµР»Рё Рё Р›РёРЅРёРё --- */
 [class*="peopleListItem_"],
 [class*="divider_"] {
     border-color: rgba(0, 0, 0, 0.15) !important;
@@ -64,32 +64,32 @@
 }
 
 /* ========================================================================
-   3. ФУНКЦИОНАЛЬНЫЕ ИСПРАВЛЕНИЯ (ФИКСЫ И ПАТЧИ)
+   3. Р¤РЈРќРљР¦РРћРќРђР›Р¬РќР«Р• РРЎРџР РђР’Р›Р•РќРРЇ (Р¤РРљРЎР« Р РџРђРўР§Р)
    ======================================================================== */
-/* --- 3.1 Оптимизация (Убираем пульсацию загрузки) --- */
+/* --- 3.1 РћРїС‚РёРјРёР·Р°С†РёСЏ (РЈР±РёСЂР°РµРј РїСѓР»СЊСЃР°С†РёСЋ Р·Р°РіСЂСѓР·РєРё) --- */
 [class*="pulseGradient_"] {
     display: none !important;
     opacity: 0 !important;
     animation: none !important;
 }
 #app-mount div[data-text-variant="text-xs/normal"][style*="color: var(--text-muted)"] {
-    color: #ffffff !important; /* Делаем текст белым (или используйте var(--highlight)) */
-    font-weight: 600 !important; /* Делаем шрифт более жирным */
-    text-shadow: 0 0 4px rgba(255, 255, 255, 0.2) !important; /* Добавляем легкое свечение */
+    color: #ffffff !important; /* Р”РµР»Р°РµРј С‚РµРєСЃС‚ Р±РµР»С‹Рј (РёР»Рё РёСЃРїРѕР»СЊР·СѓР№С‚Рµ var(--highlight)) */
+    font-weight: 600 !important; /* Р”РµР»Р°РµРј С€СЂРёС„С‚ Р±РѕР»РµРµ Р¶РёСЂРЅС‹Рј */
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.2) !important; /* Р”РѕР±Р°РІР»СЏРµРј Р»РµРіРєРѕРµ СЃРІРµС‡РµРЅРёРµ */
 }
-/* --- Выразительные даты сообщений (Свечение) --- */
+/* --- Р’С‹СЂР°Р·РёС‚РµР»СЊРЅС‹Рµ РґР°С‚С‹ СЃРѕРѕР±С‰РµРЅРёР№ (РЎРІРµС‡РµРЅРёРµ) --- */
 #app-mount [class*="timestampInline_"] time {
-    color: rgba(255, 255, 255, 0.7) !important; /* Яркий белый цвет */
-    font-weight: 600 !important; /* Делаем шрифт жирнее */
-    text-shadow: 0 0 4px rgba(255, 255, 255, 0.4) !important; /* Легкое свечение */
+    color: rgba(255, 255, 255, 0.7) !important; /* РЇСЂРєРёР№ Р±РµР»С‹Р№ С†РІРµС‚ */
+    font-weight: 600 !important; /* Р”РµР»Р°РµРј С€СЂРёС„С‚ Р¶РёСЂРЅРµРµ */
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.4) !important; /* Р›РµРіРєРѕРµ СЃРІРµС‡РµРЅРёРµ */
 }
 
-/* Приглушаем тире-разделитель */
+/* РџСЂРёРіР»СѓС€Р°РµРј С‚РёСЂРµ-СЂР°Р·РґРµР»РёС‚РµР»СЊ */
 #app-mount [class*="timestampInline_"] i[class*="separator_"] {
     color: rgba(255, 255, 255, 0.3) !important;
     text-shadow: none !important;
 }
-/* --- 3.2 Исправление Превью Стрима (Stream Preview) --- */
+/* --- 3.2 РСЃРїСЂР°РІР»РµРЅРёРµ РџСЂРµРІСЊСЋ РЎС‚СЂРёРјР° (Stream Preview) --- */
 html body #app-mount [class*="overlayContainer_"] {
     background: transparent !important;
 }
@@ -103,7 +103,7 @@ html body #app-mount [class*="overlayContainer_"] {
         html body #app-mount [class*="streamPreview_"] button {
             background-color: rgba(30, 30, 30, 0.8) !important;
         }
-    /* --- 3.3 Исправление Меню Выбора Экрана (Stream Modal) --- */
+    /* --- 3.3 РСЃРїСЂР°РІР»РµРЅРёРµ РњРµРЅСЋ Р’С‹Р±РѕСЂР° Р­РєСЂР°РЅР° (Stream Modal) --- */
     [class*="container__8a031"],
     div[data-mana-component="modal"] {
         background: #111111 !important;
@@ -129,14 +129,14 @@ html body #app-mount [class*="overlayContainer_"] {
     [class*="pillItemSelected_"] {
         background-color: #5865F2 !important;
     }
-    /* --- 3.4 Плагины и Специфические замены --- */
+    /* --- 3.4 РџР»Р°РіРёРЅС‹ Рё РЎРїРµС†РёС„РёС‡РµСЃРєРёРµ Р·Р°РјРµРЅС‹ --- */
     /* Spotify Plugin Fix */
     #vc-spotify-player {
         background: transparent !important;
         border: none !important;
         box-shadow: none !important;
     }
-    /* Замена конкретной картинки/аватарки */
+    /* Р—Р°РјРµРЅР° РєРѕРЅРєСЂРµС‚РЅРѕР№ РєР°СЂС‚РёРЅРєРё/Р°РІР°С‚Р°СЂРєРё */
     img[src*="e8396e79419904ca"] {
         content: url("https://i.ibb.co/ZzSbpqDv/Gemini-Generated-Image-x1dfux1dfux1dfu1x.png") !important;
         width: 48px !important;
@@ -144,26 +144,26 @@ html body #app-mount [class*="overlayContainer_"] {
         object-fit: cover !important;
         border-radius: 50% !important;
     }
-    /* --- Элегантные адаптивные иконки мута (Тонкий контур) --- */
+    /* --- Р­Р»РµРіР°РЅС‚РЅС‹Рµ Р°РґР°РїС‚РёРІРЅС‹Рµ РёРєРѕРЅРєРё РјСѓС‚Р° (РўРѕРЅРєРёР№ РєРѕРЅС‚СѓСЂ) --- */
 
     .iconGroup__07f91 svg[aria-describedby*="r1fk"],
     .iconGroup__07f91 svg[aria-describedby*="r1fl"],
     [class*="iconGroup_"] [class*="icon_"] {
-        /* Глубокий темный цвет для светлых участков фона */
+        /* Р“Р»СѓР±РѕРєРёР№ С‚РµРјРЅС‹Р№ С†РІРµС‚ РґР»СЏ СЃРІРµС‚Р»С‹С… СѓС‡Р°СЃС‚РєРѕРІ С„РѕРЅР° */
         color: #1a1a1a !important;
-        /* Вместо жирной обводки — микро-контур в 0.5px */
-        /* Он почти незаметен на белом, но дает четкий силуэт на черном */
+        /* Р’РјРµСЃС‚Рѕ Р¶РёСЂРЅРѕР№ РѕР±РІРѕРґРєРё вЂ” РјРёРєСЂРѕ-РєРѕРЅС‚СѓСЂ РІ 0.5px */
+        /* РћРЅ РїРѕС‡С‚Рё РЅРµР·Р°РјРµС‚РµРЅ РЅР° Р±РµР»РѕРј, РЅРѕ РґР°РµС‚ С‡РµС‚РєРёР№ СЃРёР»СѓСЌС‚ РЅР° С‡РµСЂРЅРѕРј */
         filter: drop-shadow(0.5px 0.5px 0px rgba(255,255,255,0.8)) drop-shadow(-0.5px -0.5px 0px rgba(255,255,255,0.8)) !important;
         transition: all 0.2s ease-in-out !important;
     }
-    /* Эффект при наведении — иконка становится четче */
+    /* Р­С„С„РµРєС‚ РїСЂРё РЅР°РІРµРґРµРЅРёРё вЂ” РёРєРѕРЅРєР° СЃС‚Р°РЅРѕРІРёС‚СЃСЏ С‡РµС‚С‡Рµ */
     [class*="iconGroup_"]:hover [class*="icon_"] {
         transform: scale(1.1) !important;
         color: #000000 !important;
-        /* Мягкое усиление ореола при наведении */
+        /* РњСЏРіРєРѕРµ СѓСЃРёР»РµРЅРёРµ РѕСЂРµРѕР»Р° РїСЂРё РЅР°РІРµРґРµРЅРёРё */
         filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1)) !important;
     }
-    /* Полностью убираем stroke, чтобы линии не были жирными */
+    /* РџРѕР»РЅРѕСЃС‚СЊСЋ СѓР±РёСЂР°РµРј stroke, С‡С‚РѕР±С‹ Р»РёРЅРёРё РЅРµ Р±С‹Р»Рё Р¶РёСЂРЅС‹РјРё */
     [class*="iconGroup_"] path {
         stroke: none !important;
         fill: currentColor !important;
@@ -401,7 +401,7 @@ div[data-mana-component="modal"] {
 /* Friends tab: make Add Friend match the active preset instead of Discord blue. */
 #app-mount .addFriend__133bf,
 #app-mount [class*="addFriend__133bf"],
-#app-mount [class*="item__133bf"][aria-label="Добавить в друзья"] {
+#app-mount [class*="item__133bf"][aria-label="Р”РѕР±Р°РІРёС‚СЊ РІ РґСЂСѓР·СЊСЏ"] {
     background: rgba(var(--tm-accent-rgb), 0.22) !important;
     background-color: rgba(var(--tm-accent-rgb), 0.22) !important;
     border: 1px solid rgba(var(--tm-accent-rgb), 0.40) !important;
@@ -411,7 +411,7 @@ div[data-mana-component="modal"] {
 
 #app-mount .addFriend__133bf:hover,
 #app-mount [class*="addFriend__133bf"]:hover,
-#app-mount [class*="item__133bf"][aria-label="Добавить в друзья"]:hover {
+#app-mount [class*="item__133bf"][aria-label="Р”РѕР±Р°РІРёС‚СЊ РІ РґСЂСѓР·СЊСЏ"]:hover {
     background: rgba(var(--tm-accent-rgb), 0.32) !important;
     background-color: rgba(var(--tm-accent-rgb), 0.32) !important;
     border-color: rgba(var(--tm-accent-rgb), 0.62) !important;
@@ -419,7 +419,7 @@ div[data-mana-component="modal"] {
 
 #app-mount .addFriend__133bf[aria-selected="true"],
 #app-mount [class*="addFriend__133bf"][aria-selected="true"],
-#app-mount [class*="item__133bf"][aria-label="Добавить в друзья"][aria-selected="true"] {
+#app-mount [class*="item__133bf"][aria-label="Р”РѕР±Р°РІРёС‚СЊ РІ РґСЂСѓР·СЊСЏ"][aria-selected="true"] {
     background: rgba(var(--tm-accent-rgb), 0.40) !important;
     background-color: rgba(var(--tm-accent-rgb), 0.40) !important;
     border-color: rgba(var(--tm-accent-rgb), 0.75) !important;
@@ -563,7 +563,7 @@ div[data-mana-component="modal"] {
 
 #app-mount [data-mana-component="layer-modal"] {
   --background-surface-high: rgba(var(--tm-accent-rgb), 0.10) !important;
-  --background-surface-higher: rgba(var(--tm-accent-rgb), 0.12) !important;
+  --background-surface-higher: rgba(var(--tm-accent-rgb), 0.10) !important;
   --background-surface-highest: rgba(var(--tm-accent-rgb), 0.14) !important;
   --background-mod-subtle: rgba(var(--tm-accent-rgb), 0.10) !important;
   --background-mod-muted: rgba(var(--tm-accent-rgb), 0.14) !important;
@@ -579,6 +579,21 @@ div[data-mana-component="modal"] {
 #app-mount [class*="breadcrumb_"] {
   color: rgb(var(--tm-accent-rgb)) !important;
   border-color: rgb(var(--tm-accent-rgb)) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] a,
+#app-mount [data-mana-component="layer-modal"] [class*="anchor_"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+  text-shadow: none !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] a:hover,
+#app-mount [data-mana-component="layer-modal"] [class*="anchor_"]:hover {
+  color: #ffffff !important;
+  text-decoration: underline !important;
 }
 
 #app-mount button[class*="primary_"]:not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]),
@@ -602,12 +617,48 @@ div[data-mana-component="modal"] {
   border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
 }
 
+#app-mount [data-mana-component="layer-modal"] a[style*="background-color: rgb(88, 101, 242)"],
+#app-mount [data-mana-component="layer-modal"] span[style*="background-color: rgb(88, 101, 242)"],
+#app-mount [data-mana-component="layer-modal"] div[style*="background-color: rgb(88, 101, 242)"]:not([role="button"]):not([class*="button_"]):not([class*="switch"]) {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+}
+
 #app-mount [style*="color: rgb(88, 101, 242)"],
 #app-mount [style*="color:#5865F2"],
 #app-mount [style*="color: #5865F2"],
 #app-mount [style*="color:#5865f2"],
 #app-mount [style*="color: #5865f2"] {
   color: rgb(var(--tm-accent-rgb)) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [role="link"],
+#app-mount [data-mana-component="layer-modal"] [class*="lookLink_"],
+#app-mount [data-mana-component="layer-modal"] [class*="colorLink_"],
+#app-mount [data-mana-component="layer-modal"] [class*="button_"][class*="link_"],
+#app-mount [data-mana-component="layer-modal"] [class*="linkButton_"],
+#app-mount [data-mana-component="layer-modal"] [style*="color: rgb(88, 101, 242)"],
+#app-mount [data-mana-component="layer-modal"] [style*="color:#5865F2"],
+#app-mount [data-mana-component="layer-modal"] [style*="color: #5865F2"],
+#app-mount [data-mana-component="layer-modal"] [style*="color:#5865f2"],
+#app-mount [data-mana-component="layer-modal"] [style*="color: #5865f2"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+  text-shadow: none !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [class*="lookLink_"] *,
+#app-mount [data-mana-component="layer-modal"] [class*="colorLink_"] *,
+#app-mount [data-mana-component="layer-modal"] [class*="button_"][class*="link_"] *,
+#app-mount [data-mana-component="layer-modal"] [class*="linkButton_"] * {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+  text-shadow: none !important;
 }
 
 #app-mount [class*="vc-switch"]:has(input:checked),
@@ -631,7 +682,7 @@ div[data-mana-component="modal"] {
 #app-mount [data-mana-component="layer-modal"] [class*="button_"][class*="lookFilled_"]:not([class*="colorRed_"]):not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]),
 #app-mount [data-mana-component="layer-modal"] .vc-button:not(.vc-button-danger):not(.vc-button-destructive),
 #app-mount [data-mana-component="layer-modal"] button[class*="vc-button"]:not([class*="danger"]):not([class*="destructive"]),
-#app-mount [data-mana-component="layer-modal"] button[class*="Button"]:not([class*="danger"]):not([class*="destructive"]):not([aria-label="Close"]):not([aria-label="Закрыть"]) {
+#app-mount [data-mana-component="layer-modal"] button[class*="Button"]:not([class*="danger"]):not([class*="destructive"]):not([aria-label="Close"]):not([aria-label="Р—Р°РєСЂС‹С‚СЊ"]) {
   background: rgba(var(--tm-accent-rgb), 0.86) !important;
   background-color: rgba(var(--tm-accent-rgb), 0.86) !important;
   border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
@@ -646,14 +697,17 @@ div[data-mana-component="modal"] {
   border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
 }
 
+#app-mount [data-mana-component="layer-modal"] [class*="item_"][class*="selected_"]::before,
+#app-mount [data-mana-component="layer-modal"] [class*="item_"][class*="selected_"]::after {
+  background-color: rgba(var(--tm-accent-rgb), 0.70) !important;
+  color: #ffffff !important;
+}
 #app-mount [data-mana-component="layer-modal"] [role="tab"][aria-selected="true"]::before,
 #app-mount [data-mana-component="layer-modal"] [role="tab"][aria-selected="true"]::after,
-#app-mount [data-mana-component="layer-modal"] [class*="selected_"]::before,
-#app-mount [data-mana-component="layer-modal"] [class*="selected_"]::after,
-#app-mount [data-mana-component="layer-modal"] [class*="tabBar_"] [class*="selected_"] {
-  background-color: rgb(var(--tm-accent-rgb)) !important;
-  border-color: rgb(var(--tm-accent-rgb)) !important;
-  color: rgb(var(--tm-accent-rgb)) !important;
+#app-mount [data-mana-component="layer-modal"] [class*="tabBar_"] [class*="selected_"]::before,
+#app-mount [data-mana-component="layer-modal"] [class*="tabBar_"] [class*="selected_"]::after {
+  background-color: rgba(var(--tm-accent-rgb), 0.72) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.72) !important;
 }
 
 /* Switch geometry: keep Vencord pills and check thumbs optically centered. */
@@ -734,3 +788,121 @@ div[data-mana-component="modal"] {
   top: 50% !important;
   translate: 0 -50% !important;
 }
+
+/* Real Vencord addon cards and switches. */
+#app-mount [data-mana-component="layer-modal"] .vc-btn-primary,
+#app-mount [data-mana-component="layer-modal"] .vc-btn-base.vc-btn-primary {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(0, 0, 0, 0.10)),
+    rgba(var(--tm-accent-rgb), 0.86) !important;
+  background-color: rgba(var(--tm-accent-rgb), 0.86) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
+  color: #ffffff !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-btn-primary:hover,
+#app-mount [data-mana-component="layer-modal"] .vc-btn-base.vc-btn-primary:hover {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(0, 0, 0, 0.08)),
+    rgba(var(--tm-accent-rgb), 0.96) !important;
+  border-color: rgb(var(--tm-accent-rgb)) !important;
+}
+#app-mount [data-mana-component="layer-modal"] .vc-addon-card,
+#app-mount [data-mana-component="layer-modal"] .vc-card-base,
+#app-mount [data-mana-component="layer-modal"] .vc-card-normal {
+  background: rgba(var(--tm-accent-rgb), 0.11) !important;
+  border: 1px solid rgba(var(--tm-accent-rgb), 0.30) !important;
+  border-radius: 8px !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-addon-card:hover,
+#app-mount [data-mana-component="layer-modal"] .vc-card-base:hover,
+#app-mount [data-mana-component="layer-modal"] .vc-card-normal:hover {
+  background: rgba(var(--tm-accent-rgb), 0.16) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.48) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-container {
+  background-color: rgba(151, 151, 159, 0.34) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-container.vc-switch-checked,
+#app-mount [data-mana-component="layer-modal"] .vc-switch-checked {
+  background-color: rgba(var(--tm-accent-rgb), 0.88) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-slider {
+  margin: 3px !important;
+  height: 20px !important;
+  width: 28px !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+/* Main left nav: selected Home/DM/server icons should not fall back to Discord blue. */
+#app-mount [data-list-item-id="guildsnav___home"] [class*="selected_"] [class*="childWrapper_"],
+#app-mount [data-list-item-id="guildsnav___home"][class*="selected_"] [class*="childWrapper_"],
+#app-mount [class*="guilds_"] [class*="selected_"] [class*="childWrapper_"],
+#app-mount [class*="tutorialContainer_"] [class*="selected_"] [class*="childWrapper_"],
+#app-mount [class*="listItem_"] [class*="selected_"] [class*="childWrapper_"] {
+  background: rgba(var(--tm-accent-rgb), 0.86) !important;
+  background-color: rgba(var(--tm-accent-rgb), 0.86) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 1px rgba(var(--tm-accent-rgb), 0.55) !important;
+}
+
+#app-mount [data-list-item-id="guildsnav___home"] [class*="selected_"] svg,
+#app-mount [class*="guilds_"] [class*="selected_"] [class*="childWrapper_"] svg,
+#app-mount [class*="tutorialContainer_"] [class*="selected_"] [class*="childWrapper_"] svg {
+  color: #ffffff !important;
+}
+
+#app-mount [class*="guilds_"] [style*="background-color: rgb(88, 101, 242)"],
+#app-mount [class*="guilds_"] [style*="background: rgb(88, 101, 242)"] {
+  background-color: rgba(var(--tm-accent-rgb), 0.86) !important;
+  background: rgba(var(--tm-accent-rgb), 0.86) !important;
+}
+
+/* Settings selected rows/tabs: accent as a hint, not a solid unreadable block. */
+#app-mount [data-mana-component="layer-modal"] [role="tab"][aria-selected="true"],
+#app-mount [data-mana-component="layer-modal"] [class*="tabBar_"] [class*="selected_"],
+#app-mount [data-mana-component="layer-modal"] [class*="item_"][class*="selected_"],
+#app-mount [data-mana-component="layer-modal"] [class*="radioGroupOption_"][data-selected="true"],
+#app-mount [data-mana-component="layer-modal"] label[data-selected="true"],
+#app-mount [data-mana-component="layer-modal"] [aria-checked="true"][role="radio"] {
+  background: rgba(var(--tm-accent-rgb), 0.10) !important;
+  background-color: rgba(var(--tm-accent-rgb), 0.10) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.46) !important;
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [role="tab"][aria-selected="true"] *,
+#app-mount [data-mana-component="layer-modal"] [class*="tabBar_"] [class*="selected_"] *,
+#app-mount [data-mana-component="layer-modal"] [class*="item_"][class*="selected_"] *,
+#app-mount [data-mana-component="layer-modal"] [class*="radioGroupOption_"][data-selected="true"] *,
+#app-mount [data-mana-component="layer-modal"] label[data-selected="true"] * {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [class*="item_"][class*="selected_"]::before,
+#app-mount [data-mana-component="layer-modal"] [class*="item_"][class*="selected_"]::after {
+  background-color: rgba(var(--tm-accent-rgb), 0.70) !important;
+  color: #ffffff !important;
+}
+#app-mount [data-mana-component="layer-modal"] [role="tab"][aria-selected="true"]::before,
+#app-mount [data-mana-component="layer-modal"] [role="tab"][aria-selected="true"]::after,
+#app-mount [data-mana-component="layer-modal"] [class*="tabBar_"] [class*="selected_"]::before,
+#app-mount [data-mana-component="layer-modal"] [class*="tabBar_"] [class*="selected_"]::after {
+  background-color: rgba(var(--tm-accent-rgb), 0.72) !important;
+}
+
+
+
+
+
+
+
