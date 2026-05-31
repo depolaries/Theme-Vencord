@@ -558,3 +558,88 @@ div[data-mana-component="modal"] {
   background-color: rgba(var(--tm-accent-rgb), 0.15) !important;
   border-color: rgba(var(--tm-accent-rgb), 0.38) !important;
 }
+
+/* Settings/Vencord accent sweep: replace Discord blue with the active preset color. */
+:root,
+.visual-refresh,
+.visual-refresh.theme-dark,
+#app-mount [data-mana-component="layer-modal"] {
+  --brand-500: rgb(var(--tm-accent-rgb)) !important;
+  --brand-560: rgba(var(--tm-accent-rgb), 0.88) !important;
+  --blue-330: rgb(var(--tm-accent-rgb)) !important;
+  --blue-345: rgb(var(--tm-accent-rgb)) !important;
+  --blue-430: rgb(var(--tm-accent-rgb)) !important;
+  --blue-500: rgb(var(--tm-accent-rgb)) !important;
+  --text-link: rgb(var(--tm-accent-rgb)) !important;
+  --text-brand: rgb(var(--tm-accent-rgb)) !important;
+  --interactive-active: rgb(var(--tm-accent-rgb)) !important;
+  --control-brand-foreground: rgb(var(--tm-accent-rgb)) !important;
+  --button-filled-brand-background: rgba(var(--tm-accent-rgb), 0.82) !important;
+  --button-filled-brand-background-hover: rgba(var(--tm-accent-rgb), 0.94) !important;
+  --button-filled-brand-background-active: rgb(var(--tm-accent-rgb)) !important;
+  --bg-brand: rgb(var(--tm-accent-rgb)) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] {
+  --background-surface-high: rgba(var(--tm-accent-rgb), 0.10) !important;
+  --background-surface-higher: rgba(var(--tm-accent-rgb), 0.12) !important;
+  --background-surface-highest: rgba(var(--tm-accent-rgb), 0.14) !important;
+  --background-mod-subtle: rgba(var(--tm-accent-rgb), 0.10) !important;
+  --background-mod-muted: rgba(var(--tm-accent-rgb), 0.14) !important;
+  --background-mod-strong: rgba(var(--tm-accent-rgb), 0.22) !important;
+  --bg-base-secondary: rgba(var(--tm-accent-rgb), 0.07) !important;
+  --bg-base-tertiary: rgba(var(--tm-accent-rgb), 0.10) !important;
+}
+
+#app-mount a,
+#app-mount [class*="anchor_"],
+#app-mount [role="tab"][aria-selected="true"],
+#app-mount [class*="tabBar_"] [class*="selected_"],
+#app-mount [class*="breadcrumb_"] {
+  color: rgb(var(--tm-accent-rgb)) !important;
+  border-color: rgb(var(--tm-accent-rgb)) !important;
+}
+
+#app-mount button[class*="primary_"]:not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]),
+#app-mount [class*="button_"][class*="primary_"]:not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]),
+#app-mount [class*="button_"][class*="brand_"]:not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]),
+#app-mount [class*="vc-button"][class*="primary"]:not([class*="danger"]) {
+  background: rgba(var(--tm-accent-rgb), 0.84) !important;
+  background-color: rgba(var(--tm-accent-rgb), 0.84) !important;
+  border: 1px solid rgba(var(--tm-accent-rgb), 0.95) !important;
+  color: #ffffff !important;
+}
+
+#app-mount [style*="background-color: rgb(88, 101, 242)"],
+#app-mount [style*="background: rgb(88, 101, 242)"],
+#app-mount [style*="background-color:#5865F2"],
+#app-mount [style*="background-color: #5865F2"],
+#app-mount [style*="background-color:#5865f2"],
+#app-mount [style*="background-color: #5865f2"] {
+  background: rgba(var(--tm-accent-rgb), 0.86) !important;
+  background-color: rgba(var(--tm-accent-rgb), 0.86) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
+}
+
+#app-mount [style*="color: rgb(88, 101, 242)"],
+#app-mount [style*="color:#5865F2"],
+#app-mount [style*="color: #5865F2"],
+#app-mount [style*="color:#5865f2"],
+#app-mount [style*="color: #5865f2"] {
+  color: rgb(var(--tm-accent-rgb)) !important;
+}
+
+#app-mount [class*="vc-switch"]:has(input:checked),
+#app-mount [class*="vc-switch"]:has(input:checked) [class*="slider"],
+#app-mount [class*="vc-switch"][class*="checked"] {
+  background-color: rgba(var(--tm-accent-rgb), 0.86) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [class*="card_"],
+#app-mount [data-mana-component="layer-modal"] [class*="list_"][class*="container_"],
+#app-mount [data-mana-component="layer-modal"] [class*="notice_"],
+#app-mount [data-mana-component="layer-modal"] [class*="info_"] {
+  background-color: rgba(var(--tm-accent-rgb), 0.08) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.22) !important;
+}
