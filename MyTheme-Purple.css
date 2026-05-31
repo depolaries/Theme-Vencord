@@ -332,3 +332,71 @@ div[data-mana-component="modal"] {
     background-image: none !important;
     display: none !important;
 }
+
+/* Voice floating chat and stream tiles: remove Discord's extra panels. */
+#app-mount .container__01ae2,
+#app-mount [class*="container__01ae2"],
+#app-mount [class*="floating__01ae2"],
+#app-mount [class*="chat_ee72fa"],
+#app-mount [class*="messagesWrapper__36d07"],
+#app-mount [class*="scroller__36d07"],
+#app-mount [class*="scrollerContent__36d07"],
+#app-mount [class*="channelBottomBarArea_f75fb0"],
+#app-mount [class*="scrollableContainer__74017"],
+#app-mount [class*="themedBackground__74017"],
+#app-mount [class*="uploadArea_"],
+#app-mount [class*="uploadDropModal_"],
+#app-mount [class*="bgScale_"],
+#app-mount [class*="scroller_affa7e"][class*="videoGrid_"],
+#app-mount [class*="listItems_affa7e"],
+#app-mount [class*="row_d6271c"],
+#app-mount [class*="tile_d6271c"],
+#app-mount [class*="tileSizer_d6271c"],
+#app-mount [class*="wrapper__2f4f7"],
+#app-mount [class*="tile__2f4f7"],
+#app-mount [class*="tileChild__2f4f7"],
+#app-mount [class*="content__2f4f7"],
+#app-mount [class*="background_fb62e2"],
+#app-mount [class*="emptyPreviewContainer__04666"],
+#app-mount [class*="emptyPreviewImage__04666"],
+#app-mount [class*="voiceChannelEffectsContainer__2f4f7"],
+#app-mount [class*="effectsWrapper__78936"],
+#app-mount [class*="effects__78936"] {
+    --background-primary: transparent !important;
+    --background-secondary: transparent !important;
+    --background-secondary-alt: transparent !important;
+    --background-tertiary: transparent !important;
+    --background-floating: transparent !important;
+    --background-nested-floating: transparent !important;
+    --bg-base-primary: transparent !important;
+    --bg-base-secondary: transparent !important;
+    --bg-base-tertiary: transparent !important;
+    --bg-overlay-1: transparent !important;
+    --bg-overlay-2: transparent !important;
+    --bg-overlay-3: transparent !important;
+    --bg-overlay-chat: transparent !important;
+    --bg-surface-overlay: transparent !important;
+    --bg-surface-raised: transparent !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+#app-mount .container__01ae2::before,
+#app-mount .container__01ae2::after,
+#app-mount [class*="container__01ae2"]::before,
+#app-mount [class*="container__01ae2"]::after,
+#app-mount [class*="floating__01ae2"]::before,
+#app-mount [class*="floating__01ae2"]::after,
+#app-mount [class*="scroller_affa7e"][class*="videoGrid_"]::before,
+#app-mount [class*="scroller_affa7e"][class*="videoGrid_"]::after,
+#app-mount [class*="tile__2f4f7"]::before,
+#app-mount [class*="tile__2f4f7"]::after,
+#app-mount [class*="background_fb62e2"]::before,
+#app-mount [class*="background_fb62e2"]::after {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
