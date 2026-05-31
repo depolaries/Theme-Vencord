@@ -852,3 +852,24 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
   fill: rgb(var(--tm-accent-rgb)) !important;
 }
 
+/* Settings modal: keep one smooth backdrop layer so translucent panels do not show seams. */
+#app-mount [data-mana-component="layer-modal"][class*="modal_"],
+#app-mount [class*="container_abd9a8"] {
+  background:
+    linear-gradient(135deg, rgba(var(--tm-accent-rgb), 0.14), rgba(var(--tm-accent-rgb), 0.05) 46%, rgba(0, 0, 0, 0.56)),
+    rgba(10, 10, 12, 0.78) !important;
+  background-color: rgba(10, 10, 12, 0.78) !important;
+  backdrop-filter: blur(14px) saturate(120%) !important;
+}
+
+#app-mount [class*="modalContent_"],
+#app-mount [class*="modalContentInner_"],
+#app-mount [class*="content_e9e3ed"],
+#app-mount [class*="contentBody_e9e3ed"],
+#app-mount [class*="scroller__6131a"],
+#app-mount [class*="panel__6131a"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+}
+
