@@ -354,7 +354,6 @@ div[data-mana-component="modal"] {
 #app-mount [class*="tile__2f4f7"],
 #app-mount [class*="tileChild__2f4f7"],
 #app-mount [class*="content__2f4f7"],
-#app-mount [class*="background_fb62e2"],
 #app-mount [class*="emptyPreviewContainer__04666"],
 #app-mount [class*="emptyPreviewImage__04666"],
 #app-mount [class*="voiceChannelEffectsContainer__2f4f7"],
@@ -390,9 +389,7 @@ div[data-mana-component="modal"] {
 #app-mount [class*="scroller_affa7e"][class*="videoGrid_"]::before,
 #app-mount [class*="scroller_affa7e"][class*="videoGrid_"]::after,
 #app-mount [class*="tile__2f4f7"]::before,
-#app-mount [class*="tile__2f4f7"]::after,
-#app-mount [class*="background_fb62e2"]::before,
-#app-mount [class*="background_fb62e2"]::after {
+#app-mount [class*="tile__2f4f7"]::after {
     background: transparent !important;
     background-color: transparent !important;
     background-image: none !important;
