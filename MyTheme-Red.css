@@ -674,3 +674,42 @@ div[data-mana-component="modal"] {
   border-color: rgb(var(--tm-accent-rgb)) !important;
   color: rgb(var(--tm-accent-rgb)) !important;
 }
+
+/* Switch geometry: keep Vencord pills and check thumbs optically centered. */
+#app-mount [data-mana-component="layer-modal"] .vc-switch {
+  width: 44px !important;
+  height: 28px !important;
+  min-width: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  position: relative !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-slider {
+  inset: 0 !important;
+  border-radius: 999px !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-slider::before {
+  width: 20px !important;
+  height: 20px !important;
+  left: 4px !important;
+  top: 50% !important;
+  bottom: auto !important;
+  transform: translateY(-50%) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-input:checked + .vc-switch-slider::before {
+  transform: translate(16px, -50%) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [class*="switchIndicator_"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [class*="switchIndicator_"] [class*="thumb_"] {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
