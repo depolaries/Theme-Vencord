@@ -1288,3 +1288,28 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
   background-color: rgba(var(--tm-accent-rgb), 0.72) !important;
 }
 
+/* Final cleanup for text link actions such as account "Show" buttons. */
+#app-mount [data-mana-component="layer-modal"] a,
+#app-mount [data-mana-component="layer-modal"] [role="link"],
+#app-mount [data-mana-component="layer-modal"] [class*="anchor_"],
+#app-mount [data-mana-component="layer-modal"] [class*="lookLink_"],
+#app-mount [data-mana-component="layer-modal"] [class*="colorLink_"],
+#app-mount [data-mana-component="layer-modal"] [class*="linkButton_"],
+#app-mount [data-mana-component="layer-modal"] :is(button, [role="button"]):is([class*="link_"], [class*="Link_"], [style*="color: rgb(88, 101, 242)"], [style*="background-color: rgb(88, 101, 242)"]):not([class*="primary_"]):not([class*="secondary_"]):not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]) {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+  text-shadow: none !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] :is(a, [role="link"], [class*="anchor_"], [class*="lookLink_"], [class*="colorLink_"], [class*="linkButton_"]) *,
+#app-mount [data-mana-component="layer-modal"] :is(button, [role="button"]):is([class*="link_"], [class*="Link_"], [style*="color: rgb(88, 101, 242)"], [style*="background-color: rgb(88, 101, 242)"]):not([class*="primary_"]):not([class*="secondary_"]):not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]) * {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+  text-shadow: none !important;
+}
