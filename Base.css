@@ -25,6 +25,7 @@
   --tm-background-blur: 5px;
   --tm-background-brightness: 100%;
   --tm-transition-time: 0.3s;
+  --tm-home-icon: url("https://i.ibb.co/7xDHQpVX/dark.jpg");
 
   --tm-overlay-backdrop: rgba(0, 0, 0, 0.85);
   --tm-app-text-shadow:
@@ -1359,7 +1360,7 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
   z-index: 2;
   pointer-events: none;
   border-radius: inherit;
-  background: center / 40px 40px no-repeat url("https://i.ibb.co/7xDHQpVX/dark.jpg");
+  background: center / 40px 40px no-repeat var(--tm-home-icon);
 }
 /* Account text links and Vencord switches: color only, native geometry. */
 #app-mount button[data-mana-component="text-button"],
