@@ -923,4 +923,92 @@ div[data-mana-component="modal"] {
   color: rgb(var(--tm-accent-rgb)) !important;
   text-shadow: none !important;
 }
+/* Last-resort cleanup: settings inline text actions like "Show" must not become filled chips. */
+#app-mount [class*="content_e9e3ed"] :is(a, span, div, button)[style*="rgb(88, 101, 242)"],
+#app-mount [class*="content_e9e3ed"] :is(a, span, div, button)[style*="#5865F2"],
+#app-mount [class*="content_e9e3ed"] :is(a, span, div, button)[style*="#5865f2"],
+#app-mount [class*="content_e9e3ed"] :is(a, span, div, button)[class*="link"],
+#app-mount [class*="content_e9e3ed"] :is(a, span, div, button)[class*="Link"],
+#app-mount [class*="content_e9e3ed"] :is(a, span, div, button)[class*="anchor"] {
+  background: none !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+  text-shadow: none !important;
+}
+
+#app-mount [class*="content_e9e3ed"] :is(a, span, div, button)[style*="rgb(88, 101, 242)"] *,
+#app-mount [class*="content_e9e3ed"] :is(a, span, div, button)[style*="#5865F2"] *,
+#app-mount [class*="content_e9e3ed"] :is(a, span, div, button)[style*="#5865f2"] *,
+#app-mount [class*="content_e9e3ed"] :is(a, span, div, button)[class*="link"] *,
+#app-mount [class*="content_e9e3ed"] :is(a, span, div, button)[class*="Link"] *,
+#app-mount [class*="content_e9e3ed"] :is(a, span, div, button)[class*="anchor"] * {
+  background: none !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+  text-shadow: none !important;
+}
+/* Discord Mana text buttons, e.g. account "Show" links. */
+#app-mount [data-mana-component="layer-modal"] [data-mana-component="text-button"],
+#app-mount [class*="content_e9e3ed"] [data-mana-component="text-button"],
+#app-mount [data-mana-component="layer-modal"] [class*="textButton_"],
+#app-mount [class*="content_e9e3ed"] [class*="textButton_"] {
+  background: none !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0 2px !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+  text-shadow: none !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [data-mana-component="text-button"] *,
+#app-mount [class*="content_e9e3ed"] [data-mana-component="text-button"] *,
+#app-mount [data-mana-component="layer-modal"] [class*="textButton_"] *,
+#app-mount [class*="content_e9e3ed"] [class*="textButton_"] * {
+  background: none !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+  text-shadow: none !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [data-mana-component="text-button"]:hover *,
+#app-mount [class*="content_e9e3ed"] [data-mana-component="text-button"]:hover *,
+#app-mount [data-mana-component="layer-modal"] [class*="textButton_"]:hover *,
+#app-mount [class*="content_e9e3ed"] [class*="textButton_"]:hover * {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+
+/* Settings sub-navigation active rows should feel like a selected pill, not a hard strip. */
+#app-mount [data-mana-component="layer-modal"] [class*="subnav_"] [class*="item_"][class*="active_"],
+#app-mount [data-mana-component="layer-modal"] [class*="subnav_"] [class*="item_"][aria-current="page"] {
+  background: rgba(var(--tm-accent-rgb), 0.16) !important;
+  background-color: rgba(var(--tm-accent-rgb), 0.16) !important;
+  border-radius: 7px !important;
+  color: #ffffff !important;
+  margin: 2px 6px 2px 0 !important;
+  padding-left: 10px !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.75) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [class*="subnav_"] [class*="item_"][class*="active_"] *,
+#app-mount [data-mana-component="layer-modal"] [class*="subnav_"] [class*="item_"][aria-current="page"] * {
+  color: #ffffff !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [class*="subnav_"] [class*="track_"],
+#app-mount [data-mana-component="layer-modal"] [class*="subnav_"] [class*="thumb_"] {
+  border-radius: 999px !important;
+}
 
