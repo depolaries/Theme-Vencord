@@ -873,3 +873,34 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
   backdrop-filter: none !important;
 }
 
+/* Settings content: layout rows stay clear; only real controls get tinted. */
+#app-mount [class*="baseSettingWrapper__32428"],
+#app-mount [class*="container__75920"],
+#app-mount [class*="categories__6131a"],
+#app-mount [class*="split__678d3"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+#app-mount [class*="baseControlItem_dbfbe0"],
+#app-mount [class*="radioGroupOption__64e61"],
+#app-mount [class*="backgroundOption__53965"],
+#app-mount [class*="wrapper__72c38"],
+#app-mount [class*="select_a16aea"],
+#app-mount [class*="selectField__0edde"],
+#app-mount [class*="container__84bad"] {
+  background-color: rgba(var(--tm-accent-rgb), 0.09) !important;
+  border: 1px solid rgba(var(--tm-accent-rgb), 0.22) !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+
+#app-mount [class*="baseControlItem_dbfbe0"]:hover,
+#app-mount [class*="radioGroupOption__64e61"]:hover,
+#app-mount [class*="radioGroupOption__64e61"][data-selected="true"],
+#app-mount [class*="backgroundOptionSelected__53965"] {
+  background-color: rgba(var(--tm-accent-rgb), 0.15) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.38) !important;
+}
+
