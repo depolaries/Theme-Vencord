@@ -1195,26 +1195,46 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
   border-color: rgba(var(--tm-accent-rgb), 0.48) !important;
 }
 
-#app-mount [data-mana-component="layer-modal"] .vc-switch-container,
-#app-mount [data-mana-component="layer-modal"] .vc-switch-container.vc-switch-checked,
-#app-mount [data-mana-component="layer-modal"] .vc-switch-checked {
-  background: transparent !important;
-  background-color: transparent !important;
-  border-color: transparent !important;
+#app-mount [data-mana-component="layer-modal"] .vc-switch-container {
+  width: 50px !important;
+  min-width: 50px !important;
+  height: 28px !important;
+  min-height: 28px !important;
+  padding: 3px !important;
+  box-sizing: border-box !important;
+  border-radius: 999px !important;
+  background: rgba(151, 151, 159, 0.42) !important;
+  background-color: rgba(151, 151, 159, 0.42) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
   box-shadow: none !important;
 }
 
-#app-mount [data-mana-component="layer-modal"] .vc-switch .vc-switch-slider,
-#app-mount [data-mana-component="layer-modal"] .vc-switch-slider {
-  background-color: rgba(151, 151, 159, 0.42) !important;
-  border-color: rgba(255, 255, 255, 0.14) !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] .vc-switch:has(input:checked) .vc-switch-slider,
-#app-mount [data-mana-component="layer-modal"] .vc-switch input:checked + .vc-switch-slider,
-#app-mount [data-mana-component="layer-modal"] .vc-switch-checked .vc-switch-slider {
+#app-mount [data-mana-component="layer-modal"] .vc-switch-container.vc-switch-checked {
+  background: rgba(var(--tm-accent-rgb), 0.88) !important;
   background-color: rgba(var(--tm-accent-rgb), 0.88) !important;
   border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-slider {
+  width: 20px !important;
+  min-width: 20px !important;
+  height: 20px !important;
+  min-height: 20px !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: rgba(151, 151, 159, 0.95) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-container.vc-switch-checked .vc-switch-slider {
+  color: rgb(var(--tm-accent-rgb)) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-slider path,
+#app-mount [data-mana-component="layer-modal"] .vc-switch-slider rect,
+#app-mount [data-mana-component="layer-modal"] .vc-switch-slider circle {
+  fill: currentColor !important;
 }
 
 /* Main left nav: selected Home/DM/server icons should not fall back to Discord blue. */
