@@ -624,3 +624,34 @@ div[data-mana-component="modal"] {
   background-color: rgba(var(--tm-accent-rgb), 0.08) !important;
   border-color: rgba(var(--tm-accent-rgb), 0.22) !important;
 }
+
+/* Final pass for Discord/Vencord brand-blue controls that ignore token overrides. */
+#app-mount [data-mana-component="layer-modal"] [class*="lookFilled_"][class*="colorBrand_"],
+#app-mount [data-mana-component="layer-modal"] [class*="button_"][class*="colorBrand_"],
+#app-mount [data-mana-component="layer-modal"] [class*="button_"][class*="lookFilled_"]:not([class*="colorRed_"]):not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]),
+#app-mount [data-mana-component="layer-modal"] .vc-button:not(.vc-button-danger):not(.vc-button-destructive),
+#app-mount [data-mana-component="layer-modal"] button[class*="vc-button"]:not([class*="danger"]):not([class*="destructive"]),
+#app-mount [data-mana-component="layer-modal"] button[class*="Button"]:not([class*="danger"]):not([class*="destructive"]):not([aria-label="Close"]):not([aria-label="Закрыть"]) {
+  background: rgba(var(--tm-accent-rgb), 0.86) !important;
+  background-color: rgba(var(--tm-accent-rgb), 0.86) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
+  color: #ffffff !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [role="switch"][aria-checked="true"],
+#app-mount [data-mana-component="layer-modal"] [class*="vc-switch"][class*="checked"],
+#app-mount [data-mana-component="layer-modal"] [class*="vc-switch"]:has(input:checked),
+#app-mount [data-mana-component="layer-modal"] [class*="switch"]:has(input:checked) {
+  background-color: rgba(var(--tm-accent-rgb), 0.88) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [role="tab"][aria-selected="true"]::before,
+#app-mount [data-mana-component="layer-modal"] [role="tab"][aria-selected="true"]::after,
+#app-mount [data-mana-component="layer-modal"] [class*="selected_"]::before,
+#app-mount [data-mana-component="layer-modal"] [class*="selected_"]::after,
+#app-mount [data-mana-component="layer-modal"] [class*="tabBar_"] [class*="selected_"] {
+  background-color: rgb(var(--tm-accent-rgb)) !important;
+  border-color: rgb(var(--tm-accent-rgb)) !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+}
