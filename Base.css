@@ -1012,6 +1012,51 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
   color: rgb(var(--tm-accent-rgb)) !important;
 }
 
+/* Voice controls: disconnect is a destructive action, not a brand button. */
+#app-mount button[aria-label="Отключиться"],
+#app-mount button[aria-label="Disconnect"],
+#app-mount button[class*="disconnect_"] {
+  width: 52px !important;
+  min-width: 52px !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  padding: 0 !important;
+  border-radius: 16px !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.14)),
+    rgba(var(--tm-close-rgb), 0.88) !important;
+  background-color: rgba(var(--tm-close-rgb), 0.88) !important;
+  border-color: rgba(var(--tm-close-rgb), 0.95) !important;
+  color: #ffffff !important;
+}
+
+#app-mount button[aria-label="Отключиться"]:hover,
+#app-mount button[aria-label="Disconnect"]:hover,
+#app-mount button[class*="disconnect_"]:hover {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0.10)),
+    rgba(var(--tm-close-rgb), 1) !important;
+  background-color: rgba(var(--tm-close-rgb), 1) !important;
+}
+
+#app-mount button[aria-label="Отключиться"] svg path,
+#app-mount button[aria-label="Disconnect"] svg path,
+#app-mount button[class*="disconnect_"] svg path {
+  fill: currentColor !important;
+}
+
+#app-mount button[aria-label="Отключиться"] [class*="contents_"],
+#app-mount button[aria-label="Disconnect"] [class*="contents_"],
+#app-mount button[class*="disconnect_"] [class*="contents_"],
+#app-mount button[aria-label="Отключиться"] [class*="lottieIcon_"],
+#app-mount button[aria-label="Disconnect"] [class*="lottieIcon_"],
+#app-mount button[class*="disconnect_"] [class*="lottieIcon_"] {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+}
+
 #app-mount [data-mana-component="layer-modal"] [role="link"],
 #app-mount [data-mana-component="layer-modal"] [class*="lookLink_"],
 #app-mount [data-mana-component="layer-modal"] [class*="colorLink_"],
