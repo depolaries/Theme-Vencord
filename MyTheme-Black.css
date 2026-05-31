@@ -1,5 +1,6 @@
 /**
- * @name Моя тема
+ * @name MyTheme Black
+ * @description Black preset. Change --background-image to set another background.
  */
 
 /* ========================================================================
@@ -23,6 +24,7 @@
     --tm-background-alpha: 0;
     --tm-text-rgb: 40, 40, 40;
     /* --- 2.2 Настройки Фона --- */
+    /* Background for this preset. Replace the url(...) below with another image if needed. */
     --background-image: url('https://i.ibb.co/B5n1zTT4/171acf3e6ba68f9fd5a88c61fde477b6.jpg');
     --tm-background-image: var(--background-image);
     --background-position: center;

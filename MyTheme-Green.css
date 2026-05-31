@@ -1,5 +1,6 @@
 /**
- * @name Моя тема
+ * @name MyTheme Green
+ * @description Green preset. Change --background-image to set another background.
  */
 
 /* ========================================================================
@@ -15,15 +16,16 @@
 .visual-refresh,
 .visual-refresh.theme-dark {
     /* --- 2.1 Основные цвета --- */
-    --rgb-highlight: 90, 90, 96;
+    --rgb-highlight: 45, 170, 105;
     --rgb-background: 0, 0, 0, 0;
     --rgb-text: 40, 40, 40;
-    --tm-accent-rgb: 90, 90, 96;
+    --tm-accent-rgb: 45, 170, 105;
     --tm-background-rgb: 0, 0, 0;
     --tm-background-alpha: 0;
     --tm-text-rgb: 40, 40, 40;
     /* --- 2.2 Настройки Фона --- */
-    --background-image: url('https://i.ibb.co/B5n1zTT4/171acf3e6ba68f9fd5a88c61fde477b6.jpg');
+    /* Background for this preset. Replace the url(...) below with another image if needed. */
+    --background-image: linear-gradient(rgba(0, 75, 42, 0.40), rgba(0, 12, 8, 0.70)), url('https://i.ibb.co/gbkL52TV/af15f19f87111402a3ae64614cedc5dd.jpg');
     --tm-background-image: var(--background-image);
     --background-position: center;
     --tm-background-position: var(--background-position);
@@ -31,7 +33,7 @@
     --tm-background-size: var(--background-size);
     --background-blur: 7px;
     --tm-background-blur: var(--background-blur);
-    --background-brightness: 80%;
+    --background-brightness: 74%;
     --tm-background-brightness: var(--background-brightness);
     --transition-time: .3s;
     --tm-transition-time: var(--transition-time);
