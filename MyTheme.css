@@ -1005,3 +1005,19 @@ div[data-mana-component="modal"] {
   border-radius: 999px !important;
 }
 
+/* Home/DM button: overlay the Discord app icon without hiding the native fallback. */
+#app-mount [data-list-item-id="guildsnav___home"] [class*="childWrapper_"] {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+#app-mount [data-list-item-id="guildsnav___home"] [class*="childWrapper_"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  background: center / 34px 34px no-repeat url("https://raw.githubusercontent.com/depolaries/Theme-Vencord/main/assets/discord-home.png");
+}
+
