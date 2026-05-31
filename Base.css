@@ -1416,3 +1416,27 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
 #app-mount [data-mana-component="layer-modal"] .vc-switch-container:has(.vc-switch-input:checked) .vc-switch-slider {
   transform: translateX(16px) !important;
 }
+
+/* Account "Show" text links must not inherit primary button fills. */
+#app-mount [data-mana-component="layer-modal"] button[data-mana-component="text-button"][class*="textButton__"][class*="primary__"],
+#app-mount [class*="content_e9e3ed"] button[data-mana-component="text-button"][class*="textButton__"][class*="primary__"],
+#app-mount [data-mana-component="layer-modal"] button[class*="textButton__"][class*="primary__"]:not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]),
+#app-mount [class*="content_e9e3ed"] button[class*="textButton__"][class*="primary__"]:not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]) {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] button[data-mana-component="text-button"][class*="textButton__"][class*="primary__"] [class*="text__"],
+#app-mount [class*="content_e9e3ed"] button[data-mana-component="text-button"][class*="textButton__"][class*="primary__"] [class*="text__"],
+#app-mount [data-mana-component="layer-modal"] button[class*="textButton__"][class*="primary__"] [class*="text__"],
+#app-mount [class*="content_e9e3ed"] button[class*="textButton__"][class*="primary__"] [class*="text__"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+}
