@@ -703,45 +703,6 @@ div[data-mana-component="modal"] {
   border-color: rgba(var(--tm-accent-rgb), 0.72) !important;
 }
 
-/* Switch geometry: keep Vencord pills and check thumbs optically centered. */
-#app-mount [data-mana-component="layer-modal"] .vc-switch {
-  width: 44px !important;
-  height: 28px !important;
-  min-width: 44px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  position: relative !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] .vc-switch-slider {
-  inset: 0 !important;
-  border-radius: 999px !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] .vc-switch-slider::before {
-  width: 20px !important;
-  height: 20px !important;
-  left: 4px !important;
-  top: 50% !important;
-  bottom: auto !important;
-  transform: translateY(-50%) !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] .vc-switch-input:checked + .vc-switch-slider::before {
-  transform: translate(16px, -50%) !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] [class*="switchIndicator_"] {
-  display: inline-flex !important;
-  align-items: center !important;
-  box-sizing: border-box !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] [class*="switchIndicator_"] [class*="thumb_"] {
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-}
-
 /* Vencord plugin cards: match settings glass instead of default black panels. */
 #app-mount [data-mana-component="layer-modal"] .vc-plugins-card,
 #app-mount [data-mana-component="layer-modal"] [class*="vc-plugins-card"] {
@@ -770,16 +731,6 @@ div[data-mana-component="modal"] {
 #app-mount [data-mana-component="layer-modal"] [class*="vc-plugins-info-button"]:hover,
 #app-mount [data-mana-component="layer-modal"] [class*="vc-plugins-settings-button"]:hover {
   color: rgb(var(--tm-accent-rgb)) !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] .vc-switch {
-  padding: 0 !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] .vc-switch-slider::before,
-#app-mount [data-mana-component="layer-modal"] .vc-switch-slider svg {
-  top: 50% !important;
-  translate: 0 -50% !important;
 }
 
 /* Real Vencord addon cards and switches. */
@@ -824,14 +775,6 @@ div[data-mana-component="modal"] {
 #app-mount [data-mana-component="layer-modal"] .vc-switch-checked {
   background-color: rgba(var(--tm-accent-rgb), 0.88) !important;
   border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] .vc-switch-slider {
-  margin: 3px !important;
-  height: 20px !important;
-  width: 28px !important;
-  top: 0 !important;
-  left: 0 !important;
 }
 
 /* Main left nav: selected Home/DM/server icons should not fall back to Discord blue. */
@@ -1022,4 +965,58 @@ div[data-mana-component="modal"] {
   border-radius: inherit;
   background: center / 40px 40px no-repeat url("https://i.ibb.co/WWKqkbVM/green.jpg");
 }
+/* Account text links and Vencord switches: color only, native geometry. */
+#app-mount button[data-mana-component="text-button"],
+#app-mount button[class^="textButton__"],
+#app-mount button[class*=" textButton__"],
+#app-mount button[class*="textButton_"] {
+  appearance: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0 2px !important;
+  opacity: 1 !important;
+}
 
+#app-mount button[data-mana-component="text-button"] *,
+#app-mount button[class^="textButton__"] *,
+#app-mount button[class*=" textButton__"] *,
+#app-mount button[class*="textButton_"] * {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-container {
+  width: 44px !important;
+  min-width: 44px !important;
+  height: 28px !important;
+  min-height: 28px !important;
+  border-radius: 16px !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-slider {
+  width: 28px !important;
+  height: 20px !important;
+  margin: 3px !important;
+  left: 0 !important;
+  top: 0 !important;
+  translate: none !important;
+  transform-origin: left center !important;
+  overflow: visible !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-checked .vc-switch-slider,
+#app-mount [data-mana-component="layer-modal"] .vc-switch-container:has(.vc-switch-input:checked) .vc-switch-slider {
+  transform: translateX(16px) !important;
+}

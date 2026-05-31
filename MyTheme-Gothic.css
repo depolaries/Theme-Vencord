@@ -1,21 +1,21 @@
-/**
+﻿/**
  * @name MyTheme Gothic
  * @description Gothic preset based on Black with the original custom home icon.
  */
 
 /* ========================================================================
-   1. РРњРџРћР РўР« Р Р—РђР’РРЎРРњРћРЎРўР
+   1. Р ВР СљР СџР С›Р В Р СћР В« Р В Р вЂ”Р С’Р вЂ™Р ВР РЋР ВР СљР С›Р РЋР СћР В
    ======================================================================== */
 @import url('https://B4T3S.github.io/DiscordDarkNeon/css/hideUsers.css');
 @import url('https://raw.githubusercontent.com/depolaries/Theme-Vencord/main/Base.css');
 /* ========================================================================
-   2. Р’РР—РЈРђР›Р¬РќРђРЇ РљРћРќР¤РР“РЈР РђР¦РРЇ (РџРћР›Р¬Р—РћР’РђРўР•Р›Р¬РЎРљРР• РќРђРЎРўР РћР™РљР)
+   2. Р вЂ™Р ВР вЂ”Р Р€Р С’Р вЂєР В¬Р СњР С’Р Р‡ Р С™Р С›Р СњР В¤Р ВР вЂњР Р€Р В Р С’Р В¦Р ВР Р‡ (Р СџР С›Р вЂєР В¬Р вЂ”Р С›Р вЂ™Р С’Р СћР вЂўР вЂєР В¬Р РЋР С™Р ВР вЂў Р СњР С’Р РЋР СћР В Р С›Р в„ўР С™Р В)
    ======================================================================== */
 
 :root,
 .visual-refresh,
 .visual-refresh.theme-dark {
-    /* --- 2.1 РћСЃРЅРѕРІРЅС‹Рµ С†РІРµС‚Р° --- */
+    /* --- 2.1 Р С›РЎРѓР Р…Р С•Р Р†Р Р…РЎвЂ№Р Вµ РЎвЂ Р Р†Р ВµРЎвЂљР В° --- */
     --rgb-highlight: 90, 90, 96;
     --rgb-background: 0, 0, 0, 0;
     --rgb-text: 40, 40, 40;
@@ -23,7 +23,7 @@
     --tm-background-rgb: 0, 0, 0;
     --tm-background-alpha: 0;
     --tm-text-rgb: 40, 40, 40;
-    /* --- 2.2 РќР°СЃС‚СЂРѕР№РєРё Р¤РѕРЅР° --- */
+    /* --- 2.2 Р СњР В°РЎРѓРЎвЂљРЎР‚Р С•Р в„–Р С”Р С‘ Р В¤Р С•Р Р…Р В° --- */
     /* Background for this preset. Replace the url(...) below with another image if needed. */
     --background-image: url('https://i.ibb.co/B5n1zTT4/171acf3e6ba68f9fd5a88c61fde477b6.jpg');
     --tm-background-image: var(--background-image);
@@ -39,7 +39,7 @@
     --tm-transition-time: var(--transition-time);
 }
 
-/* --- 2.3 РўРёРїРѕРіСЂР°С„РёРєР° Рё РўРµРєСЃС‚ --- */
+/* --- 2.3 Р СћР С‘Р С—Р С•Р С–РЎР‚Р В°РЎвЂћР С‘Р С”Р В° Р С‘ Р СћР ВµР С”РЎРѓРЎвЂљ --- */
 .appMount__51fd7 * {
     text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7), 0px 0px 2px rgba(0, 0, 0, 0.9) !important;
 }
@@ -53,7 +53,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1) !important;
 }
 
-/* --- 2.4 Р Р°Р·РґРµР»РёС‚РµР»Рё Рё Р›РёРЅРёРё --- */
+/* --- 2.4 Р В Р В°Р В·Р Т‘Р ВµР В»Р С‘РЎвЂљР ВµР В»Р С‘ Р С‘ Р вЂєР С‘Р Р…Р С‘Р С‘ --- */
 [class*="peopleListItem_"],
 [class*="divider_"] {
     border-color: rgba(0, 0, 0, 0.15) !important;
@@ -64,32 +64,32 @@
 }
 
 /* ========================================================================
-   3. Р¤РЈРќРљР¦РРћРќРђР›Р¬РќР«Р• РРЎРџР РђР’Р›Р•РќРРЇ (Р¤РРљРЎР« Р РџРђРўР§Р)
+   3. Р В¤Р Р€Р СњР С™Р В¦Р ВР С›Р СњР С’Р вЂєР В¬Р СњР В«Р вЂў Р ВР РЋР СџР В Р С’Р вЂ™Р вЂєР вЂўР СњР ВР Р‡ (Р В¤Р ВР С™Р РЋР В« Р В Р СџР С’Р СћР В§Р В)
    ======================================================================== */
-/* --- 3.1 РћРїС‚РёРјРёР·Р°С†РёСЏ (РЈР±РёСЂР°РµРј РїСѓР»СЊСЃР°С†РёСЋ Р·Р°РіСЂСѓР·РєРё) --- */
+/* --- 3.1 Р С›Р С—РЎвЂљР С‘Р СР С‘Р В·Р В°РЎвЂ Р С‘РЎРЏ (Р Р€Р В±Р С‘РЎР‚Р В°Р ВµР С Р С—РЎС“Р В»РЎРЉРЎРѓР В°РЎвЂ Р С‘РЎР‹ Р В·Р В°Р С–РЎР‚РЎС“Р В·Р С”Р С‘) --- */
 [class*="pulseGradient_"] {
     display: none !important;
     opacity: 0 !important;
     animation: none !important;
 }
 #app-mount div[data-text-variant="text-xs/normal"][style*="color: var(--text-muted)"] {
-    color: #ffffff !important; /* Р”РµР»Р°РµРј С‚РµРєСЃС‚ Р±РµР»С‹Рј (РёР»Рё РёСЃРїРѕР»СЊР·СѓР№С‚Рµ var(--highlight)) */
-    font-weight: 600 !important; /* Р”РµР»Р°РµРј С€СЂРёС„С‚ Р±РѕР»РµРµ Р¶РёСЂРЅС‹Рј */
-    text-shadow: 0 0 4px rgba(255, 255, 255, 0.2) !important; /* Р”РѕР±Р°РІР»СЏРµРј Р»РµРіРєРѕРµ СЃРІРµС‡РµРЅРёРµ */
+    color: #ffffff !important; /* Р вЂќР ВµР В»Р В°Р ВµР С РЎвЂљР ВµР С”РЎРѓРЎвЂљ Р В±Р ВµР В»РЎвЂ№Р С (Р С‘Р В»Р С‘ Р С‘РЎРѓР С—Р С•Р В»РЎРЉР В·РЎС“Р в„–РЎвЂљР Вµ var(--highlight)) */
+    font-weight: 600 !important; /* Р вЂќР ВµР В»Р В°Р ВµР С РЎв‚¬РЎР‚Р С‘РЎвЂћРЎвЂљ Р В±Р С•Р В»Р ВµР Вµ Р В¶Р С‘РЎР‚Р Р…РЎвЂ№Р С */
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.2) !important; /* Р вЂќР С•Р В±Р В°Р Р†Р В»РЎРЏР ВµР С Р В»Р ВµР С–Р С”Р С•Р Вµ РЎРѓР Р†Р ВµРЎвЂЎР ВµР Р…Р С‘Р Вµ */
 }
-/* --- Р’С‹СЂР°Р·РёС‚РµР»СЊРЅС‹Рµ РґР°С‚С‹ СЃРѕРѕР±С‰РµРЅРёР№ (РЎРІРµС‡РµРЅРёРµ) --- */
+/* --- Р вЂ™РЎвЂ№РЎР‚Р В°Р В·Р С‘РЎвЂљР ВµР В»РЎРЉР Р…РЎвЂ№Р Вµ Р Т‘Р В°РЎвЂљРЎвЂ№ РЎРѓР С•Р С•Р В±РЎвЂ°Р ВµР Р…Р С‘Р в„– (Р РЋР Р†Р ВµРЎвЂЎР ВµР Р…Р С‘Р Вµ) --- */
 #app-mount [class*="timestampInline_"] time {
-    color: rgba(255, 255, 255, 0.7) !important; /* РЇСЂРєРёР№ Р±РµР»С‹Р№ С†РІРµС‚ */
-    font-weight: 600 !important; /* Р”РµР»Р°РµРј С€СЂРёС„С‚ Р¶РёСЂРЅРµРµ */
-    text-shadow: 0 0 4px rgba(255, 255, 255, 0.4) !important; /* Р›РµРіРєРѕРµ СЃРІРµС‡РµРЅРёРµ */
+    color: rgba(255, 255, 255, 0.7) !important; /* Р Р‡РЎР‚Р С”Р С‘Р в„– Р В±Р ВµР В»РЎвЂ№Р в„– РЎвЂ Р Р†Р ВµРЎвЂљ */
+    font-weight: 600 !important; /* Р вЂќР ВµР В»Р В°Р ВµР С РЎв‚¬РЎР‚Р С‘РЎвЂћРЎвЂљ Р В¶Р С‘РЎР‚Р Р…Р ВµР Вµ */
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.4) !important; /* Р вЂєР ВµР С–Р С”Р С•Р Вµ РЎРѓР Р†Р ВµРЎвЂЎР ВµР Р…Р С‘Р Вµ */
 }
 
-/* РџСЂРёРіР»СѓС€Р°РµРј С‚РёСЂРµ-СЂР°Р·РґРµР»РёС‚РµР»СЊ */
+/* Р СџРЎР‚Р С‘Р С–Р В»РЎС“РЎв‚¬Р В°Р ВµР С РЎвЂљР С‘РЎР‚Р Вµ-РЎР‚Р В°Р В·Р Т‘Р ВµР В»Р С‘РЎвЂљР ВµР В»РЎРЉ */
 #app-mount [class*="timestampInline_"] i[class*="separator_"] {
     color: rgba(255, 255, 255, 0.3) !important;
     text-shadow: none !important;
 }
-/* --- 3.2 РСЃРїСЂР°РІР»РµРЅРёРµ РџСЂРµРІСЊСЋ РЎС‚СЂРёРјР° (Stream Preview) --- */
+/* --- 3.2 Р ВРЎРѓР С—РЎР‚Р В°Р Р†Р В»Р ВµР Р…Р С‘Р Вµ Р СџРЎР‚Р ВµР Р†РЎРЉРЎР‹ Р РЋРЎвЂљРЎР‚Р С‘Р СР В° (Stream Preview) --- */
 html body #app-mount [class*="overlayContainer_"] {
     background: transparent !important;
 }
@@ -103,7 +103,7 @@ html body #app-mount [class*="overlayContainer_"] {
         html body #app-mount [class*="streamPreview_"] button {
             background-color: rgba(30, 30, 30, 0.8) !important;
         }
-    /* --- 3.3 РСЃРїСЂР°РІР»РµРЅРёРµ РњРµРЅСЋ Р’С‹Р±РѕСЂР° Р­РєСЂР°РЅР° (Stream Modal) --- */
+    /* --- 3.3 Р ВРЎРѓР С—РЎР‚Р В°Р Р†Р В»Р ВµР Р…Р С‘Р Вµ Р СљР ВµР Р…РЎР‹ Р вЂ™РЎвЂ№Р В±Р С•РЎР‚Р В° Р В­Р С”РЎР‚Р В°Р Р…Р В° (Stream Modal) --- */
     [class*="container__8a031"],
     div[data-mana-component="modal"] {
         background: #111111 !important;
@@ -129,34 +129,34 @@ html body #app-mount [class*="overlayContainer_"] {
     [class*="pillItemSelected_"] {
         background-color: #5865F2 !important;
     }
-    /* --- 3.4 РџР»Р°РіРёРЅС‹ Рё РЎРїРµС†РёС„РёС‡РµСЃРєРёРµ Р·Р°РјРµРЅС‹ --- */
+    /* --- 3.4 Р СџР В»Р В°Р С–Р С‘Р Р…РЎвЂ№ Р С‘ Р РЋР С—Р ВµРЎвЂ Р С‘РЎвЂћР С‘РЎвЂЎР ВµРЎРѓР С”Р С‘Р Вµ Р В·Р В°Р СР ВµР Р…РЎвЂ№ --- */
     /* Spotify Plugin Fix */
     #vc-spotify-player {
         background: transparent !important;
         border: none !important;
         box-shadow: none !important;
     }
-    /* Р—Р°РјРµРЅР° РєРѕРЅРєСЂРµС‚РЅРѕР№ РєР°СЂС‚РёРЅРєРё/Р°РІР°С‚Р°СЂРєРё */
-    /* --- Р­Р»РµРіР°РЅС‚РЅС‹Рµ Р°РґР°РїС‚РёРІРЅС‹Рµ РёРєРѕРЅРєРё РјСѓС‚Р° (РўРѕРЅРєРёР№ РєРѕРЅС‚СѓСЂ) --- */
+    /* Р вЂ”Р В°Р СР ВµР Р…Р В° Р С”Р С•Р Р…Р С”РЎР‚Р ВµРЎвЂљР Р…Р С•Р в„– Р С”Р В°РЎР‚РЎвЂљР С‘Р Р…Р С”Р С‘/Р В°Р Р†Р В°РЎвЂљР В°РЎР‚Р С”Р С‘ */
+    /* --- Р В­Р В»Р ВµР С–Р В°Р Р…РЎвЂљР Р…РЎвЂ№Р Вµ Р В°Р Т‘Р В°Р С—РЎвЂљР С‘Р Р†Р Р…РЎвЂ№Р Вµ Р С‘Р С”Р С•Р Р…Р С”Р С‘ Р СРЎС“РЎвЂљР В° (Р СћР С•Р Р…Р С”Р С‘Р в„– Р С”Р С•Р Р…РЎвЂљРЎС“РЎР‚) --- */
 
     .iconGroup__07f91 svg[aria-describedby*="r1fk"],
     .iconGroup__07f91 svg[aria-describedby*="r1fl"],
     [class*="iconGroup_"] [class*="icon_"] {
-        /* Р“Р»СѓР±РѕРєРёР№ С‚РµРјРЅС‹Р№ С†РІРµС‚ РґР»СЏ СЃРІРµС‚Р»С‹С… СѓС‡Р°СЃС‚РєРѕРІ С„РѕРЅР° */
+        /* Р вЂњР В»РЎС“Р В±Р С•Р С”Р С‘Р в„– РЎвЂљР ВµР СР Р…РЎвЂ№Р в„– РЎвЂ Р Р†Р ВµРЎвЂљ Р Т‘Р В»РЎРЏ РЎРѓР Р†Р ВµРЎвЂљР В»РЎвЂ№РЎвЂ¦ РЎС“РЎвЂЎР В°РЎРѓРЎвЂљР С”Р С•Р Р† РЎвЂћР С•Р Р…Р В° */
         color: #1a1a1a !important;
-        /* Р’РјРµСЃС‚Рѕ Р¶РёСЂРЅРѕР№ РѕР±РІРѕРґРєРё вЂ” РјРёРєСЂРѕ-РєРѕРЅС‚СѓСЂ РІ 0.5px */
-        /* РћРЅ РїРѕС‡С‚Рё РЅРµР·Р°РјРµС‚РµРЅ РЅР° Р±РµР»РѕРј, РЅРѕ РґР°РµС‚ С‡РµС‚РєРёР№ СЃРёР»СѓСЌС‚ РЅР° С‡РµСЂРЅРѕРј */
+        /* Р вЂ™Р СР ВµРЎРѓРЎвЂљР С• Р В¶Р С‘РЎР‚Р Р…Р С•Р в„– Р С•Р В±Р Р†Р С•Р Т‘Р С”Р С‘ РІР‚вЂќ Р СР С‘Р С”РЎР‚Р С•-Р С”Р С•Р Р…РЎвЂљРЎС“РЎР‚ Р Р† 0.5px */
+        /* Р С›Р Р… Р С—Р С•РЎвЂЎРЎвЂљР С‘ Р Р…Р ВµР В·Р В°Р СР ВµРЎвЂљР ВµР Р… Р Р…Р В° Р В±Р ВµР В»Р С•Р С, Р Р…Р С• Р Т‘Р В°Р ВµРЎвЂљ РЎвЂЎР ВµРЎвЂљР С”Р С‘Р в„– РЎРѓР С‘Р В»РЎС“РЎРЊРЎвЂљ Р Р…Р В° РЎвЂЎР ВµРЎР‚Р Р…Р С•Р С */
         filter: drop-shadow(0.5px 0.5px 0px rgba(255,255,255,0.8)) drop-shadow(-0.5px -0.5px 0px rgba(255,255,255,0.8)) !important;
         transition: all 0.2s ease-in-out !important;
     }
-    /* Р­С„С„РµРєС‚ РїСЂРё РЅР°РІРµРґРµРЅРёРё вЂ” РёРєРѕРЅРєР° СЃС‚Р°РЅРѕРІРёС‚СЃСЏ С‡РµС‚С‡Рµ */
+    /* Р В­РЎвЂћРЎвЂћР ВµР С”РЎвЂљ Р С—РЎР‚Р С‘ Р Р…Р В°Р Р†Р ВµР Т‘Р ВµР Р…Р С‘Р С‘ РІР‚вЂќ Р С‘Р С”Р С•Р Р…Р С”Р В° РЎРѓРЎвЂљР В°Р Р…Р С•Р Р†Р С‘РЎвЂљРЎРѓРЎРЏ РЎвЂЎР ВµРЎвЂљРЎвЂЎР Вµ */
     [class*="iconGroup_"]:hover [class*="icon_"] {
         transform: scale(1.1) !important;
         color: #000000 !important;
-        /* РњСЏРіРєРѕРµ СѓСЃРёР»РµРЅРёРµ РѕСЂРµРѕР»Р° РїСЂРё РЅР°РІРµРґРµРЅРёРё */
+        /* Р СљРЎРЏР С–Р С”Р С•Р Вµ РЎС“РЎРѓР С‘Р В»Р ВµР Р…Р С‘Р Вµ Р С•РЎР‚Р ВµР С•Р В»Р В° Р С—РЎР‚Р С‘ Р Р…Р В°Р Р†Р ВµР Т‘Р ВµР Р…Р С‘Р С‘ */
         filter: drop-shadow(0 0 2px rgba(255, 255, 255, 1)) !important;
     }
-    /* РџРѕР»РЅРѕСЃС‚СЊСЋ СѓР±РёСЂР°РµРј stroke, С‡С‚РѕР±С‹ Р»РёРЅРёРё РЅРµ Р±С‹Р»Рё Р¶РёСЂРЅС‹РјРё */
+    /* Р СџР С•Р В»Р Р…Р С•РЎРѓРЎвЂљРЎРЉРЎР‹ РЎС“Р В±Р С‘РЎР‚Р В°Р ВµР С stroke, РЎвЂЎРЎвЂљР С•Р В±РЎвЂ№ Р В»Р С‘Р Р…Р С‘Р С‘ Р Р…Р Вµ Р В±РЎвЂ№Р В»Р С‘ Р В¶Р С‘РЎР‚Р Р…РЎвЂ№Р СР С‘ */
     [class*="iconGroup_"] path {
         stroke: none !important;
         fill: currentColor !important;
@@ -394,7 +394,7 @@ div[data-mana-component="modal"] {
 /* Friends tab: make Add Friend match the active preset instead of Discord blue. */
 #app-mount .addFriend__133bf,
 #app-mount [class*="addFriend__133bf"],
-#app-mount [class*="item__133bf"][aria-label="Р”РѕР±Р°РІРёС‚СЊ РІ РґСЂСѓР·СЊСЏ"] {
+#app-mount [class*="item__133bf"][aria-label="Р вЂќР С•Р В±Р В°Р Р†Р С‘РЎвЂљРЎРЉ Р Р† Р Т‘РЎР‚РЎС“Р В·РЎРЉРЎРЏ"] {
     background: rgba(var(--tm-accent-rgb), 0.22) !important;
     background-color: rgba(var(--tm-accent-rgb), 0.22) !important;
     border: 1px solid rgba(var(--tm-accent-rgb), 0.40) !important;
@@ -404,7 +404,7 @@ div[data-mana-component="modal"] {
 
 #app-mount .addFriend__133bf:hover,
 #app-mount [class*="addFriend__133bf"]:hover,
-#app-mount [class*="item__133bf"][aria-label="Р”РѕР±Р°РІРёС‚СЊ РІ РґСЂСѓР·СЊСЏ"]:hover {
+#app-mount [class*="item__133bf"][aria-label="Р вЂќР С•Р В±Р В°Р Р†Р С‘РЎвЂљРЎРЉ Р Р† Р Т‘РЎР‚РЎС“Р В·РЎРЉРЎРЏ"]:hover {
     background: rgba(var(--tm-accent-rgb), 0.32) !important;
     background-color: rgba(var(--tm-accent-rgb), 0.32) !important;
     border-color: rgba(var(--tm-accent-rgb), 0.62) !important;
@@ -412,7 +412,7 @@ div[data-mana-component="modal"] {
 
 #app-mount .addFriend__133bf[aria-selected="true"],
 #app-mount [class*="addFriend__133bf"][aria-selected="true"],
-#app-mount [class*="item__133bf"][aria-label="Р”РѕР±Р°РІРёС‚СЊ РІ РґСЂСѓР·СЊСЏ"][aria-selected="true"] {
+#app-mount [class*="item__133bf"][aria-label="Р вЂќР С•Р В±Р В°Р Р†Р С‘РЎвЂљРЎРЉ Р Р† Р Т‘РЎР‚РЎС“Р В·РЎРЉРЎРЏ"][aria-selected="true"] {
     background: rgba(var(--tm-accent-rgb), 0.40) !important;
     background-color: rgba(var(--tm-accent-rgb), 0.40) !important;
     border-color: rgba(var(--tm-accent-rgb), 0.75) !important;
@@ -675,7 +675,7 @@ div[data-mana-component="modal"] {
 #app-mount [data-mana-component="layer-modal"] [class*="button_"][class*="lookFilled_"]:not([class*="colorRed_"]):not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]),
 #app-mount [data-mana-component="layer-modal"] .vc-button:not(.vc-button-danger):not(.vc-button-destructive),
 #app-mount [data-mana-component="layer-modal"] button[class*="vc-button"]:not([class*="danger"]):not([class*="destructive"]),
-#app-mount [data-mana-component="layer-modal"] button[class*="Button"]:not([class*="danger"]):not([class*="destructive"]):not([aria-label="Close"]):not([aria-label="Р—Р°РєСЂС‹С‚СЊ"]) {
+#app-mount [data-mana-component="layer-modal"] button[class*="Button"]:not([class*="danger"]):not([class*="destructive"]):not([aria-label="Close"]):not([aria-label="Р вЂ”Р В°Р С”РЎР‚РЎвЂ№РЎвЂљРЎРЉ"]) {
   background: rgba(var(--tm-accent-rgb), 0.86) !important;
   background-color: rgba(var(--tm-accent-rgb), 0.86) !important;
   border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
@@ -701,45 +701,6 @@ div[data-mana-component="modal"] {
 #app-mount [data-mana-component="layer-modal"] [class*="tabBar_"] [class*="selected_"]::after {
   background-color: rgba(var(--tm-accent-rgb), 0.72) !important;
   border-color: rgba(var(--tm-accent-rgb), 0.72) !important;
-}
-
-/* Switch geometry: keep Vencord pills and check thumbs optically centered. */
-#app-mount [data-mana-component="layer-modal"] .vc-switch {
-  width: 44px !important;
-  height: 28px !important;
-  min-width: 44px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  position: relative !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] .vc-switch-slider {
-  inset: 0 !important;
-  border-radius: 999px !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] .vc-switch-slider::before {
-  width: 20px !important;
-  height: 20px !important;
-  left: 4px !important;
-  top: 50% !important;
-  bottom: auto !important;
-  transform: translateY(-50%) !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] .vc-switch-input:checked + .vc-switch-slider::before {
-  transform: translate(16px, -50%) !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] [class*="switchIndicator_"] {
-  display: inline-flex !important;
-  align-items: center !important;
-  box-sizing: border-box !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] [class*="switchIndicator_"] [class*="thumb_"] {
-  top: 50% !important;
-  transform: translateY(-50%) !important;
 }
 
 /* Vencord plugin cards: match settings glass instead of default black panels. */
@@ -770,16 +731,6 @@ div[data-mana-component="modal"] {
 #app-mount [data-mana-component="layer-modal"] [class*="vc-plugins-info-button"]:hover,
 #app-mount [data-mana-component="layer-modal"] [class*="vc-plugins-settings-button"]:hover {
   color: rgb(var(--tm-accent-rgb)) !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] .vc-switch {
-  padding: 0 !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] .vc-switch-slider::before,
-#app-mount [data-mana-component="layer-modal"] .vc-switch-slider svg {
-  top: 50% !important;
-  translate: 0 -50% !important;
 }
 
 /* Real Vencord addon cards and switches. */
@@ -824,14 +775,6 @@ div[data-mana-component="modal"] {
 #app-mount [data-mana-component="layer-modal"] .vc-switch-checked {
   background-color: rgba(var(--tm-accent-rgb), 0.88) !important;
   border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] .vc-switch-slider {
-  margin: 3px !important;
-  height: 20px !important;
-  width: 28px !important;
-  top: 0 !important;
-  left: 0 !important;
 }
 
 /* Main left nav: selected Home/DM/server icons should not fall back to Discord blue. */
@@ -1022,4 +965,58 @@ div[data-mana-component="modal"] {
   border-radius: inherit;
   background: center / 40px 40px no-repeat url("https://i.ibb.co/ZzSbpqDv/Gemini-Generated-Image-x1dfux1dfux1dfu1x.png");
 }
+/* Account text links and Vencord switches: color only, native geometry. */
+#app-mount button[data-mana-component="text-button"],
+#app-mount button[class^="textButton__"],
+#app-mount button[class*=" textButton__"],
+#app-mount button[class*="textButton_"] {
+  appearance: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0 2px !important;
+  opacity: 1 !important;
+}
 
+#app-mount button[data-mana-component="text-button"] *,
+#app-mount button[class^="textButton__"] *,
+#app-mount button[class*=" textButton__"] *,
+#app-mount button[class*="textButton_"] * {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-container {
+  width: 44px !important;
+  min-width: 44px !important;
+  height: 28px !important;
+  min-height: 28px !important;
+  border-radius: 16px !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-slider {
+  width: 28px !important;
+  height: 20px !important;
+  margin: 3px !important;
+  left: 0 !important;
+  top: 0 !important;
+  translate: none !important;
+  transform-origin: left center !important;
+  overflow: visible !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-checked .vc-switch-slider,
+#app-mount [data-mana-component="layer-modal"] .vc-switch-container:has(.vc-switch-input:checked) .vc-switch-slider {
+  transform: translateX(16px) !important;
+}
