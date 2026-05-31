@@ -1074,3 +1074,48 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
   transform: translateY(-50%) !important;
 }
 
+/* Vencord plugin cards: match settings glass instead of default black panels. */
+#app-mount [data-mana-component="layer-modal"] .vc-plugins-card,
+#app-mount [data-mana-component="layer-modal"] [class*="vc-plugins-card"] {
+  background:
+    linear-gradient(135deg, rgba(var(--tm-accent-rgb), 0.10), rgba(0, 0, 0, 0.22)),
+    rgba(8, 8, 10, 0.42) !important;
+  border: 1px solid rgba(var(--tm-accent-rgb), 0.26) !important;
+  border-radius: 8px !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-plugins-card:hover,
+#app-mount [data-mana-component="layer-modal"] [class*="vc-plugins-card"]:hover {
+  background:
+    linear-gradient(135deg, rgba(var(--tm-accent-rgb), 0.14), rgba(0, 0, 0, 0.20)),
+    rgba(8, 8, 10, 0.48) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.42) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-plugins-info-button,
+#app-mount [data-mana-component="layer-modal"] .vc-plugins-settings-button,
+#app-mount [data-mana-component="layer-modal"] [class*="vc-plugins-info-button"],
+#app-mount [data-mana-component="layer-modal"] [class*="vc-plugins-settings-button"] {
+  color: rgba(255, 255, 255, 0.72) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-plugins-info-button:hover,
+#app-mount [data-mana-component="layer-modal"] .vc-plugins-settings-button:hover,
+#app-mount [data-mana-component="layer-modal"] [class*="vc-plugins-info-button"]:hover,
+#app-mount [data-mana-component="layer-modal"] [class*="vc-plugins-settings-button"]:hover {
+  color: rgb(var(--tm-accent-rgb)) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch {
+  padding: 0 !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-slider::before,
+#app-mount [data-mana-component="layer-modal"] .vc-switch-slider svg {
+  top: 50% !important;
+  translate: 0 -50% !important;
+}
+

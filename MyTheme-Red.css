@@ -713,3 +713,43 @@ div[data-mana-component="modal"] {
   top: 50% !important;
   transform: translateY(-50%) !important;
 }
+
+/* Vencord plugin cards: match settings glass instead of default black panels. */
+#app-mount [data-mana-component="layer-modal"] .vc-plugins-card,
+#app-mount [data-mana-component="layer-modal"] [class*="vc-plugins-card"] {
+  background: rgba(var(--tm-accent-rgb), 0.10) !important;
+  border: 1px solid rgba(var(--tm-accent-rgb), 0.26) !important;
+  border-radius: 8px !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-plugins-card:hover,
+#app-mount [data-mana-component="layer-modal"] [class*="vc-plugins-card"]:hover {
+  background: rgba(var(--tm-accent-rgb), 0.14) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.42) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-plugins-info-button,
+#app-mount [data-mana-component="layer-modal"] .vc-plugins-settings-button,
+#app-mount [data-mana-component="layer-modal"] [class*="vc-plugins-info-button"],
+#app-mount [data-mana-component="layer-modal"] [class*="vc-plugins-settings-button"] {
+  color: rgba(255, 255, 255, 0.72) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-plugins-info-button:hover,
+#app-mount [data-mana-component="layer-modal"] .vc-plugins-settings-button:hover,
+#app-mount [data-mana-component="layer-modal"] [class*="vc-plugins-info-button"]:hover,
+#app-mount [data-mana-component="layer-modal"] [class*="vc-plugins-settings-button"]:hover {
+  color: rgb(var(--tm-accent-rgb)) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch {
+  padding: 0 !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-slider::before,
+#app-mount [data-mana-component="layer-modal"] .vc-switch-slider svg {
+  top: 50% !important;
+  translate: 0 -50% !important;
+}
