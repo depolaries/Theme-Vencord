@@ -1482,3 +1482,124 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
   box-shadow: none !important;
   color: rgb(var(--tm-accent-rgb)) !important;
 }
+
+/* Final geometry pass: keep controls readable without reshaping their internals. */
+#app-mount button[aria-label="Отключиться"],
+#app-mount button[aria-label="Disconnect"],
+#app-mount button[class*="disconnect_"] {
+  width: 56px !important;
+  min-width: 56px !important;
+  max-width: 56px !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 15px !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(0, 0, 0, 0.16)),
+    rgba(var(--tm-close-rgb), 0.90) !important;
+  background-color: rgba(var(--tm-close-rgb), 0.90) !important;
+  border: 1px solid rgba(var(--tm-close-rgb), 0.95) !important;
+  color: #ffffff !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 8px 18px rgba(0, 0, 0, 0.24) !important;
+}
+
+#app-mount button[aria-label="Отключиться"] [class*="contents_"],
+#app-mount button[aria-label="Disconnect"] [class*="contents_"],
+#app-mount button[class*="disconnect_"] [class*="contents_"] {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#app-mount button[aria-label="Отключиться"] [class*="lottieIcon_"],
+#app-mount button[aria-label="Disconnect"] [class*="lottieIcon_"],
+#app-mount button[class*="disconnect_"] [class*="lottieIcon_"],
+#app-mount button[aria-label="Отключиться"] svg,
+#app-mount button[aria-label="Disconnect"] svg,
+#app-mount button[class*="disconnect_"] svg {
+  width: 30px !important;
+  min-width: 30px !important;
+  height: 30px !important;
+  min-height: 30px !important;
+  display: block !important;
+  color: #ffffff !important;
+}
+
+#app-mount button[aria-label="Отключиться"] svg path,
+#app-mount button[aria-label="Disconnect"] svg path,
+#app-mount button[class*="disconnect_"] svg path {
+  fill: currentColor !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [class*="switchIndicator_"] {
+  background-color: rgba(151, 151, 159, 0.34) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [class*="switchIndicator_"]:has(input:checked),
+#app-mount [data-mana-component="layer-modal"] label:has(input:checked) [class*="switchIndicator_"] {
+  background-color: rgba(var(--tm-accent-rgb), 0.88) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] [class*="switchIndicator_"] [class*="thumb_"],
+#app-mount [data-mana-component="layer-modal"] [class*="switchIndicator_"] [class*="thumb_"] rect {
+  fill: #ffffff !important;
+  filter: none !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-container {
+  width: 56px !important;
+  min-width: 56px !important;
+  height: 32px !important;
+  min-height: 32px !important;
+  padding: 4px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  border-radius: 999px !important;
+  background-color: rgba(151, 151, 159, 0.34) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  box-sizing: border-box !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-container.vc-switch-checked {
+  background-color: rgba(var(--tm-accent-rgb), 0.88) !important;
+  border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-slider {
+  width: 24px !important;
+  min-width: 24px !important;
+  height: 24px !important;
+  min-height: 24px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: rgba(88, 92, 102, 0.95) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-container.vc-switch-checked .vc-switch-slider {
+  color: rgb(var(--tm-accent-rgb)) !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-slider svg {
+  width: 18px !important;
+  height: 18px !important;
+  display: block !important;
+}
+
+#app-mount [data-mana-component="layer-modal"] .vc-switch-slider :is(path, rect, circle) {
+  fill: currentColor !important;
+}
