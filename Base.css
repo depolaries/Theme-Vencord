@@ -951,7 +951,7 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
 #app-mount [data-mana-component="layer-modal"] [class*="button_"][class*="lookFilled_"]:not([class*="colorRed_"]):not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]),
 #app-mount [data-mana-component="layer-modal"] .vc-button:not(.vc-button-danger):not(.vc-button-destructive),
 #app-mount [data-mana-component="layer-modal"] button[class*="vc-button"]:not([class*="danger"]):not([class*="destructive"]),
-#app-mount [data-mana-component="layer-modal"] button[class*="Button"]:not([class*="danger"]):not([class*="destructive"]):not([aria-label="Close"]):not([aria-label="Р—Р°РєСЂС‹С‚СЊ"]) {
+#app-mount [data-mana-component="layer-modal"] button[class*="Button"]:not([data-mana-component="text-button"]):not([class*="textButton_"]):not([class*="danger"]):not([class*="destructive"]):not([aria-label="Close"]):not([aria-label="Р—Р°РєСЂС‹С‚СЊ"]) {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(0, 0, 0, 0.10)),
     rgba(var(--tm-accent-rgb), 0.86) !important;
@@ -1331,4 +1331,40 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
 
 #app-mount [data-mana-component="layer-modal"] .vc-switch-slider :is(path, rect, circle) {
   fill: currentColor !important;
+}
+
+/* Text-only account actions like "Show" stay links, never filled pills. */
+#app-mount button[data-mana-component="text-button"],
+#app-mount button[class*="textButton_"],
+#app-mount [data-mana-component="layer-modal"] button[data-mana-component="text-button"],
+#app-mount [data-mana-component="layer-modal"] button[class*="textButton_"],
+#app-mount [class*="content_e9e3ed"] button[data-mana-component="text-button"],
+#app-mount [class*="content_e9e3ed"] button[class*="textButton_"] {
+  appearance: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0 2px !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+}
+
+#app-mount button[data-mana-component="text-button"] *,
+#app-mount button[class*="textButton_"] *,
+#app-mount [data-mana-component="layer-modal"] button[data-mana-component="text-button"] *,
+#app-mount [data-mana-component="layer-modal"] button[class*="textButton_"] *,
+#app-mount [class*="content_e9e3ed"] button[data-mana-component="text-button"] *,
+#app-mount [class*="content_e9e3ed"] button[class*="textButton_"] * {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: rgb(var(--tm-accent-rgb)) !important;
+  text-shadow: none !important;
 }
