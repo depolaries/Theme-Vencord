@@ -1,35 +1,19 @@
 ﻿/**
  * @name MyTheme Black
- * @description Black preset. Change --background-image to set another background.
+ * @description Neutral black preset.
  */
 
-@import url('https://B4T3S.github.io/DiscordDarkNeon/css/hideUsers.css');
 @import url('https://raw.githubusercontent.com/depolaries/Theme-Vencord/main/Base.css');
 
 :root,
 .visual-refresh,
 .visual-refresh.theme-dark {
-  --rgb-highlight: 90, 90, 96;
-  --rgb-background: 0, 0, 0, 0;
-  --rgb-text: 40, 40, 40;
-
-  --tm-accent-rgb: 90, 90, 96;
+  --tm-accent-rgb: 132, 136, 148;
   --tm-background-rgb: 0, 0, 0;
   --tm-background-alpha: 0;
-  --tm-text-rgb: 40, 40, 40;
-
-  --background-image: url('https://i.ibb.co/B5n1zTT4/171acf3e6ba68f9fd5a88c61fde477b6.jpg');
-  --tm-background-image: var(--background-image);
-  --background-position: center;
-  --tm-background-position: var(--background-position);
-  --background-size: cover;
-  --tm-background-size: var(--background-size);
-  --background-blur: 7px;
-  --tm-background-blur: var(--background-blur);
-  --background-brightness: 80%;
-  --tm-background-brightness: var(--background-brightness);
-  --transition-time: .3s;
-  --tm-transition-time: var(--transition-time);
-
-  --tm-home-icon: url("https://i.ibb.co/7xDHQpVX/dark.jpg");
+  --tm-text-rgb: 214, 216, 222;
+  --tm-background-image: url('https://i.ibb.co/B5n1zTT4/171acf3e6ba68f9fd5a88c61fde477b6.jpg');
+  --tm-background-brightness: 76%;
+  --tm-background-blur: 7px;
+  --tm-home-icon: url('https://i.ibb.co/7xDHQpVX/dark.jpg');
 }

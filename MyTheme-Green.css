@@ -1,35 +1,19 @@
 ﻿/**
  * @name MyTheme Green
- * @description Green preset. Change --background-image to set another background.
+ * @description Deep green preset.
  */
 
-@import url('https://B4T3S.github.io/DiscordDarkNeon/css/hideUsers.css');
 @import url('https://raw.githubusercontent.com/depolaries/Theme-Vencord/main/Base.css');
 
 :root,
 .visual-refresh,
 .visual-refresh.theme-dark {
-  --rgb-highlight: 45, 170, 105;
-  --rgb-background: 0, 0, 0, 0;
-  --rgb-text: 40, 40, 40;
-
-  --tm-accent-rgb: 45, 170, 105;
+  --tm-accent-rgb: 42, 168, 103;
   --tm-background-rgb: 0, 0, 0;
   --tm-background-alpha: 0;
-  --tm-text-rgb: 40, 40, 40;
-
-  --background-image: linear-gradient(rgba(0, 75, 42, 0.40), rgba(0, 12, 8, 0.70)), url('https://i.ibb.co/gbkL52TV/af15f19f87111402a3ae64614cedc5dd.jpg');
-  --tm-background-image: var(--background-image);
-  --background-position: center;
-  --tm-background-position: var(--background-position);
-  --background-size: cover;
-  --tm-background-size: var(--background-size);
-  --background-blur: 7px;
-  --tm-background-blur: var(--background-blur);
-  --background-brightness: 74%;
-  --tm-background-brightness: var(--background-brightness);
-  --transition-time: .3s;
-  --tm-transition-time: var(--transition-time);
-
-  --tm-home-icon: url("https://i.ibb.co/WWKqkbVM/green.jpg");
+  --tm-text-rgb: 207, 221, 213;
+  --tm-background-image: linear-gradient(rgba(0, 75, 42, 0.38), rgba(0, 12, 8, 0.72)), url('https://i.ibb.co/gbkL52TV/af15f19f87111402a3ae64614cedc5dd.jpg');
+  --tm-background-brightness: 76%;
+  --tm-background-blur: 7px;
+  --tm-home-icon: url('https://i.ibb.co/WWKqkbVM/green.jpg');
 }

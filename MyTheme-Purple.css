@@ -1,35 +1,19 @@
 ﻿/**
  * @name MyTheme Purple
- * @description Purple preset. Change --background-image to set another background.
+ * @description Deep purple preset.
  */
 
-@import url('https://B4T3S.github.io/DiscordDarkNeon/css/hideUsers.css');
 @import url('https://raw.githubusercontent.com/depolaries/Theme-Vencord/main/Base.css');
 
 :root,
 .visual-refresh,
 .visual-refresh.theme-dark {
-  --rgb-highlight: 145, 85, 220;
-  --rgb-background: 0, 0, 0, 0;
-  --rgb-text: 40, 40, 40;
-
-  --tm-accent-rgb: 145, 85, 220;
+  --tm-accent-rgb: 145, 92, 210;
   --tm-background-rgb: 0, 0, 0;
   --tm-background-alpha: 0;
-  --tm-text-rgb: 40, 40, 40;
-
-  --background-image: linear-gradient(rgba(72, 20, 130, 0.42), rgba(6, 0, 20, 0.70)), url('https://i.ibb.co/xKWfhcTR/30c8cb7b1f5cc25a37a2ed2c7b14747a.jpg');
-  --tm-background-image: var(--background-image);
-  --background-position: center;
-  --tm-background-position: var(--background-position);
-  --background-size: cover;
-  --tm-background-size: var(--background-size);
-  --background-blur: 7px;
-  --tm-background-blur: var(--background-blur);
-  --background-brightness: 76%;
-  --tm-background-brightness: var(--background-brightness);
-  --transition-time: .3s;
-  --tm-transition-time: var(--transition-time);
-
-  --tm-home-icon: url("https://i.ibb.co/HLbztpPK/purple.jpg");
+  --tm-text-rgb: 220, 213, 230;
+  --tm-background-image: linear-gradient(rgba(72, 20, 130, 0.38), rgba(6, 0, 20, 0.72)), url('https://i.ibb.co/xKWfhcTR/30c8cb7b1f5cc25a37a2ed2c7b14747a.jpg');
+  --tm-background-brightness: 77%;
+  --tm-background-blur: 7px;
+  --tm-home-icon: url('https://i.ibb.co/HLbztpPK/purple.jpg');
 }

@@ -1,35 +1,19 @@
 ﻿/**
  * @name MyTheme Red
- * @description Red preset. Change --background-image to set another background.
+ * @description Deep red preset with a softer accent.
  */
 
-@import url('https://B4T3S.github.io/DiscordDarkNeon/css/hideUsers.css');
 @import url('https://raw.githubusercontent.com/depolaries/Theme-Vencord/main/Base.css');
 
 :root,
 .visual-refresh,
 .visual-refresh.theme-dark {
-  --rgb-highlight: 255, 36, 36;
-  --rgb-background: 0, 0, 0, 0;
-  --rgb-text: 40, 40, 40;
-
-  --tm-accent-rgb: 255, 36, 36;
+  --tm-accent-rgb: 215, 52, 62;
   --tm-background-rgb: 0, 0, 0;
   --tm-background-alpha: 0;
-  --tm-text-rgb: 40, 40, 40;
-
-  --background-image: linear-gradient(rgba(210, 0, 18, 0.30), rgba(18, 0, 0, 0.62)), url('https://i.ibb.co/VcsMhCS7/3be14a299505005569097e9746a482fd.jpg');
-  --tm-background-image: var(--background-image);
-  --background-position: center;
-  --tm-background-position: var(--background-position);
-  --background-size: cover;
-  --tm-background-size: var(--background-size);
-  --background-blur: 7px;
-  --tm-background-blur: var(--background-blur);
-  --background-brightness: 78%;
-  --tm-background-brightness: var(--background-brightness);
-  --transition-time: .3s;
-  --tm-transition-time: var(--transition-time);
-
-  --tm-home-icon: url("https://i.ibb.co/XrnbsLmV/red.jpg");
+  --tm-text-rgb: 228, 214, 216;
+  --tm-background-image: linear-gradient(rgba(176, 0, 20, 0.28), rgba(18, 0, 0, 0.66)), url('https://i.ibb.co/VcsMhCS7/3be14a299505005569097e9746a482fd.jpg');
+  --tm-background-brightness: 78%;
+  --tm-background-blur: 7px;
+  --tm-home-icon: url('https://i.ibb.co/XrnbsLmV/red.jpg');
 }

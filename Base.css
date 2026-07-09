@@ -3,6 +3,8 @@
  * @description Shared theme layer. Keep this file in GitHub and import it once.
  */
 
+@import url("https://B4T3S.github.io/DiscordDarkNeon/css/hideUsers.css");
+
 /* ========================================================================
    1. TOKENS (defaults for static behavior)
    ======================================================================== */
@@ -63,7 +65,7 @@
   --tm-stream-modal-border: rgba(255, 255, 255, 0.1);
   --tm-stream-pill-bg: rgba(0, 0, 0, 0.5);
   --tm-stream-pill-item-bg: rgba(255, 255, 255, 0.05);
-  --tm-stream-pill-selected-bg: #5865F2;
+  --tm-stream-pill-selected-bg: rgb(var(--tm-accent-rgb));
   --tm-upload-modal-bg: #111111;
   --tm-spotify-bg: transparent;
   --tm-muted-content-color: rgb(255 255 255 / 80%);
@@ -966,14 +968,6 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
   border-color: rgba(var(--tm-accent-rgb), 0.95) !important;
 }
 
-#app-mount [data-mana-component="layer-modal"] [role="tab"][aria-selected="true"]::before,
-#app-mount [data-mana-component="layer-modal"] [role="tab"][aria-selected="true"]::after,
-#app-mount [data-mana-component="layer-modal"] [class*="tabBar_"] [class*="selected_"]::before,
-#app-mount [data-mana-component="layer-modal"] [class*="tabBar_"] [class*="selected_"]::after {
-  background-color: rgba(var(--tm-accent-rgb), 0.72) !important;
-  border-color: rgba(var(--tm-accent-rgb), 0.72) !important;
-}
-
 /* Vencord plugin cards: match settings glass instead of default black panels. */
 #app-mount [data-mana-component="layer-modal"] .vc-plugins-card,
 #app-mount [data-mana-component="layer-modal"] [class*="vc-plugins-card"] {
@@ -1134,44 +1128,6 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
   box-shadow: none !important;
   color: rgb(var(--tm-accent-rgb)) !important;
   text-shadow: none !important;
-}
-
-/* Discord Mana text buttons, e.g. account "Show" links. */
-#app-mount [data-mana-component="layer-modal"] [data-mana-component="text-button"],
-#app-mount [class*="content_e9e3ed"] [data-mana-component="text-button"],
-#app-mount [data-mana-component="layer-modal"] [class*="textButton_"],
-#app-mount [class*="content_e9e3ed"] [class*="textButton_"] {
-  background: none !important;
-  background-color: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  outline: 0 !important;
-  min-width: 0 !important;
-  min-height: 0 !important;
-  height: auto !important;
-  padding: 0 2px !important;
-  color: rgb(var(--tm-accent-rgb)) !important;
-  text-shadow: none !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] [data-mana-component="text-button"] *,
-#app-mount [class*="content_e9e3ed"] [data-mana-component="text-button"] *,
-#app-mount [data-mana-component="layer-modal"] [class*="textButton_"] *,
-#app-mount [class*="content_e9e3ed"] [class*="textButton_"] * {
-  background: none !important;
-  background-color: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  color: rgb(var(--tm-accent-rgb)) !important;
-  text-shadow: none !important;
-}
-
-#app-mount [data-mana-component="layer-modal"] [data-mana-component="text-button"]:hover *,
-#app-mount [class*="content_e9e3ed"] [data-mana-component="text-button"]:hover *,
-#app-mount [data-mana-component="layer-modal"] [class*="textButton_"]:hover *,
-#app-mount [class*="content_e9e3ed"] [class*="textButton_"]:hover * {
-  color: #ffffff !important;
-  text-decoration: underline !important;
 }
 
 /* Settings sub-navigation active rows should feel like a selected pill, not a hard strip. */
@@ -1367,4 +1323,10 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
   box-shadow: none !important;
   color: rgb(var(--tm-accent-rgb)) !important;
   text-shadow: none !important;
+}
+
+#app-mount button[data-mana-component="text-button"]:hover *,
+#app-mount button[class*="textButton_"]:hover * {
+  color: #ffffff !important;
+  text-decoration: underline !important;
 }
