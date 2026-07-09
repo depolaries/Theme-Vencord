@@ -809,6 +809,14 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
   backdrop-filter: none !important;
 }
 
+#app-mount [data-mana-component="layer-modal"] [class*="contentHeader_e9e3ed"] {
+  background: rgba(var(--tm-accent-rgb), 0.08) !important;
+  background-color: rgba(var(--tm-accent-rgb), 0.08) !important;
+  border-bottom: 1px solid rgba(var(--tm-accent-rgb), 0.20) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(12px) saturate(115%) !important;
+}
+
 /* Settings content: layout rows stay clear; only real controls get tinted. */
 #app-mount [class*="baseSettingWrapper__32428"],
 #app-mount [class*="container__75920"],
@@ -907,7 +915,7 @@ div[role="dialog"] [class*="uploadModal_"] [class*="inner_"] {
   text-decoration: underline !important;
 }
 
-#app-mount button[class*="primary_"]:not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]),
+#app-mount button[class*="primary_"]:not([data-mana-component="text-button"]):not([class*="textButton_"]):not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]),
 #app-mount [class*="button_"][class*="primary_"]:not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]),
 #app-mount [class*="button_"][class*="brand_"]:not([class*="critical"]):not([class*="destructive"]):not([class*="danger"]),
 #app-mount [class*="vc-button"][class*="primary"]:not([class*="danger"]) {

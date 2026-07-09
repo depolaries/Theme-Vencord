@@ -1,0 +1,66 @@
+name: Build ThemeSwitcher Vencord
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "vencord-userplugins/themeSwitcher/**"
+      - ".github/workflows/build-theme-switcher.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out theme repository
+        uses: actions/checkout@v4
+
+      - name: Check out Vencord
+        uses: actions/checkout@v4
+        with:
+          repository: Vendicated/Vencord
+          path: Vencord
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Enable pnpm
+        run: corepack enable
+
+      - name: Install dependencies
+        working-directory: Vencord
+        run: pnpm install --frozen-lockfile
+
+      - name: Install ThemeSwitcher userplugin
+        run: |
+          mkdir -p Vencord/src/userplugins/themeSwitcher
+          cp -R vencord-userplugins/themeSwitcher/. Vencord/src/userplugins/themeSwitcher/
+
+      - name: Type-check
+        working-directory: Vencord
+        run: pnpm testTsc
+
+      - name: Build Vencord
+        working-directory: Vencord
+        run: pnpm build
+
+      - name: Package dist
+        run: |
+          cd Vencord
+          zip -r ../ThemeSwitcher-Vencord-dist.zip dist
+
+      - name: Publish prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete theme-switcher-dev --cleanup-tag --yes || true
+          gh release create theme-switcher-dev ThemeSwitcher-Vencord-dist.zip \
+            --prerelease \
+            --title "ThemeSwitcher Vencord Build" \
+            --notes "Automated custom Vencord build containing the ThemeSwitcher userplugin."
