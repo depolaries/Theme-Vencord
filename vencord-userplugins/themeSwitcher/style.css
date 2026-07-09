@@ -1,0 +1,88 @@
+.vc-theme-switcher-button,
+.vc-theme-switcher-icon {
+    -webkit-app-region: no-drag;
+}
+
+.vc-theme-switcher-icon {
+    box-sizing: border-box;
+    display: grid;
+    width: 18px;
+    height: 18px;
+    place-items: center;
+    border: 2px solid color-mix(in srgb, var(--vc-theme-color) 70%, white 30%);
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--vc-theme-color) 24%, transparent);
+}
+
+.vc-theme-switcher-icon > span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--vc-theme-color);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--vc-theme-color) 60%, transparent);
+}
+
+.vc-theme-switcher-popout {
+    box-sizing: border-box;
+    width: 184px;
+    padding: 8px;
+    border: 1px solid var(--background-modifier-accent);
+    border-radius: 8px;
+    background: var(--background-floating);
+    box-shadow: var(--elevation-high);
+}
+
+.vc-theme-switcher-heading {
+    padding: 4px 8px 8px;
+    color: var(--header-secondary);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+}
+
+.vc-theme-switcher-options {
+    display: grid;
+    gap: 2px;
+}
+
+.vc-theme-switcher-option {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 18px minmax(0, 1fr) 18px;
+    gap: 8px;
+    align-items: center;
+    width: 100%;
+    min-height: 36px;
+    padding: 6px 8px;
+    border: 0;
+    border-radius: 4px;
+    color: var(--interactive-normal);
+    background: transparent;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.vc-theme-switcher-option:hover,
+.vc-theme-switcher-option[data-selected="true"] {
+    color: var(--interactive-active);
+    background: var(--background-modifier-hover);
+}
+
+.vc-theme-switcher-swatch {
+    width: 14px;
+    height: 14px;
+    border: 2px solid color-mix(in srgb, currentColor 24%, transparent);
+    border-radius: 50%;
+}
+
+.vc-theme-switcher-check {
+    box-sizing: border-box;
+    width: 7px;
+    height: 12px;
+    margin: 0 auto 3px;
+    border: solid var(--interactive-active);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
