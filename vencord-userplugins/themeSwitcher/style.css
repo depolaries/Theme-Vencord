@@ -1,6 +1,40 @@
 .vc-theme-switcher-button,
+.vc-theme-switcher-fallback,
 .vc-theme-switcher-icon {
     -webkit-app-region: no-drag;
+}
+
+#vc-theme-switcher-fallback-root {
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+}
+
+.vc-theme-switcher-fallback {
+    position: fixed;
+    z-index: 1001;
+    top: 5px;
+    right: 148px;
+    display: grid;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    place-items: center;
+    border: 1px solid rgba(var(--tm-accent-rgb), 0.34);
+    border-radius: 6px;
+    color: var(--interactive-normal);
+    background: rgba(8, 9, 10, 0.72);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.vc-theme-switcher-fallback:hover,
+.vc-theme-switcher-fallback[data-selected="true"] {
+    border-color: rgba(var(--tm-accent-rgb), 0.72);
+    background: rgba(var(--tm-accent-rgb), 0.18);
 }
 
 .vc-theme-switcher-icon {

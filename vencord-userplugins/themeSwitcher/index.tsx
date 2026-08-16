@@ -16,8 +16,9 @@ import { definePluginSettings } from "@api/Settings";
 import ErrorBoundary from "@components/ErrorBoundary";
 import definePlugin, { OptionType, PluginNative } from "@utils/types";
 import { findComponentByCodeLazy } from "@webpack";
-import { Popout, showToast, Toasts, useRef, useState } from "@webpack/common";
+import { createRoot, Popout, showToast, Toasts, useEffect, useRef, useState } from "@webpack/common";
 import type { CSSProperties, PropsWithChildren } from "react";
+import type { Root } from "react-dom/client";
 
 const Native = VencordNative.pluginHelpers.ThemeSwitcher as PluginNative<typeof import("./native")>;
 const HeaderBarIcon = findComponentByCodeLazy(".HEADER_BAR_BADGE_BOTTOM,", 'position:"bottom"');
@@ -139,6 +140,84 @@ function ThemeSwitcherButton() {
     );
 }
 
+function hasVisibleTitlebarButton() {
+    const button = document.querySelector<HTMLElement>(".vc-theme-switcher-button");
+    return button != null && button.getClientRects().length > 0;
+}
+
+function FloatingThemeSwitcher() {
+    const buttonRef = useRef<HTMLButtonElement>(null);
+    const [showPicker, setShowPicker] = useState(false);
+    const [showFallback, setShowFallback] = useState(() => !hasVisibleTitlebarButton());
+    const { preset } = settings.use(["preset"]);
+
+    useEffect(() => {
+        const updateVisibility = () => setShowFallback(!hasVisibleTitlebarButton());
+        const observer = new MutationObserver(updateVisibility);
+
+        observer.observe(document.body, { childList: true, subtree: true });
+        window.addEventListener("resize", updateVisibility);
+        updateVisibility();
+
+        return () => {
+            observer.disconnect();
+            window.removeEventListener("resize", updateVisibility);
+        };
+    }, []);
+
+    if (!showFallback) return null;
+
+    return (
+        <Popout
+            position="bottom"
+            align="right"
+            animation={Popout.Animation.NONE}
+            shouldShow={showPicker}
+            onRequestClose={() => setShowPicker(false)}
+            targetElementRef={buttonRef}
+            renderPopout={() => <ThemePicker onClose={() => setShowPicker(false)} />}
+        >
+            {(_, { isShown }) => (
+                <button
+                    ref={buttonRef}
+                    type="button"
+                    className="vc-theme-switcher-fallback"
+                    data-selected={isShown}
+                    aria-label={`Theme: ${displayName(preset as Preset)}`}
+                    onClick={() => setShowPicker(value => !value)}
+                >
+                    <ThemeIcon preset={preset as Preset} />
+                </button>
+            )}
+        </Popout>
+    );
+}
+
+let fallbackRoot: Root | null = null;
+let fallbackContainer: HTMLDivElement | null = null;
+
+function mountFallback() {
+    if (fallbackRoot) return;
+
+    fallbackContainer = document.createElement("div");
+    fallbackContainer.id = "vc-theme-switcher-fallback-root";
+    document.body.append(fallbackContainer);
+
+    fallbackRoot = createRoot(fallbackContainer);
+    fallbackRoot.render(
+        <ErrorBoundary noop>
+            <FloatingThemeSwitcher />
+        </ErrorBoundary>
+    );
+}
+
+function unmountFallback() {
+    fallbackRoot?.unmount();
+    fallbackContainer?.remove();
+    fallbackRoot = null;
+    fallbackContainer = null;
+}
+
 export default definePlugin({
     name: "ThemeSwitcher",
     description: "Switch MyTheme presets from the titlebar, settings, Toolbox, or /vtheme.",
@@ -186,6 +265,11 @@ export default definePlugin({
 
     start() {
         void applyPreset(settings.store.preset as Preset, false);
+        mountFallback();
+    },
+
+    stop() {
+        unmountFallback();
     },
 
     TrailingWrapper({ children }: PropsWithChildren) {
