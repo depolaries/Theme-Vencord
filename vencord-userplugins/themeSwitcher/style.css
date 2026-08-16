@@ -5,17 +5,20 @@
 
 #vc-theme-switcher-fallback-root {
     position: fixed;
-    z-index: 1001;
-    top: 0;
-    right: 0;
+    z-index: 2147483647;
+    inset: 0;
     pointer-events: none;
 }
 
-.vc-theme-switcher-fallback {
+.vc-theme-switcher-floating {
     position: fixed;
-    z-index: 1001;
     top: 5px;
-    right: 148px;
+    right: 220px;
+    width: 32px;
+    pointer-events: auto;
+}
+
+.vc-theme-switcher-fallback {
     display: grid;
     width: 32px;
     height: 32px;
@@ -28,6 +31,13 @@
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
     pointer-events: auto;
     cursor: pointer;
+}
+
+.vc-theme-switcher-floating-popout {
+    position: absolute;
+    top: 38px;
+    right: 0;
+    pointer-events: auto;
 }
 
 .vc-theme-switcher-fallback:hover,

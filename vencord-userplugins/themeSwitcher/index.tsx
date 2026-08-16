@@ -15,7 +15,7 @@ import {
 import { definePluginSettings } from "@api/Settings";
 import ErrorBoundary from "@components/ErrorBoundary";
 import definePlugin, { OptionType, PluginNative } from "@utils/types";
-import { createRoot, Popout, showToast, Toasts, useRef, useState } from "@webpack/common";
+import { createRoot, showToast, Toasts, useEffect, useRef, useState } from "@webpack/common";
 import type { CSSProperties } from "react";
 import type { Root } from "react-dom/client";
 
@@ -110,33 +110,47 @@ function ThemePicker({ onClose }: { onClose(): void; }) {
 }
 
 function FloatingThemeSwitcher() {
-    const buttonRef = useRef<HTMLButtonElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const [showPicker, setShowPicker] = useState(false);
     const { preset } = settings.use(["preset"]);
 
+    useEffect(() => {
+        if (!showPicker) return;
+
+        const closeOnOutsideClick = (event: MouseEvent) => {
+            if (!containerRef.current?.contains(event.target as Node)) setShowPicker(false);
+        };
+        const closeOnEscape = (event: KeyboardEvent) => {
+            if (event.key === "Escape") setShowPicker(false);
+        };
+
+        document.addEventListener("mousedown", closeOnOutsideClick);
+        document.addEventListener("keydown", closeOnEscape);
+        return () => {
+            document.removeEventListener("mousedown", closeOnOutsideClick);
+            document.removeEventListener("keydown", closeOnEscape);
+        };
+    }, [showPicker]);
+
     return (
-        <Popout
-            position="bottom"
-            align="right"
-            animation={Popout.Animation.NONE}
-            shouldShow={showPicker}
-            onRequestClose={() => setShowPicker(false)}
-            targetElementRef={buttonRef}
-            renderPopout={() => <ThemePicker onClose={() => setShowPicker(false)} />}
-        >
-            {(_, { isShown }) => (
-                <button
-                    ref={buttonRef}
-                    type="button"
-                    className="vc-theme-switcher-fallback"
-                    data-selected={isShown}
-                    aria-label={`Theme: ${displayName(preset as Preset)}`}
-                    onClick={() => setShowPicker(value => !value)}
-                >
-                    <ThemeIcon preset={preset as Preset} />
-                </button>
+        <div ref={containerRef} className="vc-theme-switcher-floating">
+            <button
+                type="button"
+                className="vc-theme-switcher-fallback"
+                data-selected={showPicker}
+                aria-label={`Theme: ${displayName(preset as Preset)}`}
+                aria-expanded={showPicker}
+                aria-haspopup="menu"
+                onClick={() => setShowPicker(value => !value)}
+            >
+                <ThemeIcon preset={preset as Preset} />
+            </button>
+            {showPicker && (
+                <div className="vc-theme-switcher-floating-popout">
+                    <ThemePicker onClose={() => setShowPicker(false)} />
+                </div>
             )}
-        </Popout>
+        </div>
     );
 }
 
