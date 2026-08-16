@@ -15,13 +15,11 @@ import {
 import { definePluginSettings } from "@api/Settings";
 import ErrorBoundary from "@components/ErrorBoundary";
 import definePlugin, { OptionType, PluginNative } from "@utils/types";
-import { findComponentByCodeLazy } from "@webpack";
-import { createRoot, Popout, showToast, Toasts, useEffect, useRef, useState } from "@webpack/common";
-import type { CSSProperties, PropsWithChildren } from "react";
+import { createRoot, Popout, showToast, Toasts, useRef, useState } from "@webpack/common";
+import type { CSSProperties } from "react";
 import type { Root } from "react-dom/client";
 
 const Native = VencordNative.pluginHelpers.ThemeSwitcher as PluginNative<typeof import("./native")>;
-const HeaderBarIcon = findComponentByCodeLazy(".HEADER_BAR_BADGE_BOTTOM,", 'position:"bottom"');
 
 const presetDefinitions = [
     { value: "black", label: "Black", color: "#a7a9ad" },
@@ -111,61 +109,10 @@ function ThemePicker({ onClose }: { onClose(): void; }) {
     );
 }
 
-function ThemeSwitcherButton() {
-    const buttonRef = useRef(null);
-    const [show, setShow] = useState(false);
-    const { preset } = settings.use(["preset"]);
-
-    return (
-        <Popout
-            position="bottom"
-            align="right"
-            animation={Popout.Animation.NONE}
-            shouldShow={show}
-            onRequestClose={() => setShow(false)}
-            targetElementRef={buttonRef}
-            renderPopout={() => <ThemePicker onClose={() => setShow(false)} />}
-        >
-            {(_, { isShown }) => (
-                <HeaderBarIcon
-                    ref={buttonRef}
-                    className="vc-theme-switcher-button"
-                    onClick={() => setShow(value => !value)}
-                    tooltip={isShown ? null : `Theme: ${displayName(preset as Preset)}`}
-                    icon={() => <ThemeIcon preset={preset as Preset} />}
-                    selected={isShown}
-                />
-            )}
-        </Popout>
-    );
-}
-
-function hasVisibleTitlebarButton() {
-    const button = document.querySelector<HTMLElement>(".vc-theme-switcher-button");
-    return button != null && button.getClientRects().length > 0;
-}
-
 function FloatingThemeSwitcher() {
     const buttonRef = useRef<HTMLButtonElement>(null);
     const [showPicker, setShowPicker] = useState(false);
-    const [showFallback, setShowFallback] = useState(() => !hasVisibleTitlebarButton());
     const { preset } = settings.use(["preset"]);
-
-    useEffect(() => {
-        const updateVisibility = () => setShowFallback(!hasVisibleTitlebarButton());
-        const observer = new MutationObserver(updateVisibility);
-
-        observer.observe(document.body, { childList: true, subtree: true });
-        window.addEventListener("resize", updateVisibility);
-        updateVisibility();
-
-        return () => {
-            observer.disconnect();
-            window.removeEventListener("resize", updateVisibility);
-        };
-    }, []);
-
-    if (!showFallback) return null;
 
     return (
         <Popout
@@ -225,14 +172,6 @@ export default definePlugin({
     authors: [{ name: "sunl3ss", id: 418774298287669248n }],
     settings,
 
-    patches: [{
-        find: '?"BACK_FORWARD_NAVIGATION":',
-        replacement: {
-            match: /(trailing:.{0,50}?)\i\.Fragment,(?=\{children:\[)/,
-            replace: "$1$self.TrailingWrapper,"
-        }
-    }],
-
     toolboxActions: Object.fromEntries(
         presetDefinitions.map(preset => [`Theme: ${preset.label}`, () => selectPreset(preset.value)])
     ),
@@ -270,16 +209,5 @@ export default definePlugin({
 
     stop() {
         unmountFallback();
-    },
-
-    TrailingWrapper({ children }: PropsWithChildren) {
-        return (
-            <>
-                {children}
-                <ErrorBoundary key="vc-theme-switcher" noop>
-                    <ThemeSwitcherButton />
-                </ErrorBoundary>
-            </>
-        );
     }
 });
